@@ -20,10 +20,12 @@ public class HelloController {
 
     @FXML
     public Button VsIA;
+    @FXML
+    public Menu menu;
 
   public static double lr;
   public static int h, l;
-public static double getLr() {
+    public static double getLr() {
     return lr;
 }
 
@@ -50,13 +52,35 @@ public static double getLr() {
 
 
 
+    public void configuration(ActionEvent actionEvent) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("ConfigAI.fxml"));
+        Stage stage = new Stage();
+        stage.setTitle("Configuration");
+        Scene scene=new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+        stage.setResizable(false);
 
+
+
+
+    }
+
+    public void model(ActionEvent actionEvent) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("ListeModele.fxml"));
+        Stage stage = new Stage();
+        stage.setTitle("Configuration");
+        Scene scene=new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+        stage.setResizable(false);
+    }
 
     public void onClickContinue(ActionEvent actionEvent) throws IOException {
 
 
 
-        Parent root = FXMLLoader.load(getClass().getResource("learningIA.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("learningAI.fxml"));
         Stage stage=new Stage();
         stage.setTitle("Learning");
         stage.setScene(new Scene(root));
@@ -71,3 +95,6 @@ public static double getLr() {
 
 
 }
+
+
+
