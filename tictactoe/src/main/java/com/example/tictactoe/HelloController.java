@@ -69,7 +69,7 @@ public class HelloController {
     public void model(ActionEvent actionEvent) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("ListeModele.fxml"));
         Stage stage = new Stage();
-        stage.setTitle("Configuration");
+        stage.setTitle("Modele liste");
         Scene scene=new Scene(root);
         stage.setScene(scene);
         stage.show();
@@ -78,15 +78,13 @@ public class HelloController {
 
     public void onClickContinue(ActionEvent actionEvent) throws IOException {
 
-
-
-        Parent root = FXMLLoader.load(getClass().getResource("learningAI.fxml"));
-        Stage stage=new Stage();
-        stage.setTitle("Learning");
-        stage.setScene(new Scene(root));
-        stage.setResizable(false);
+        Parent root = FXMLLoader.load(getClass().getResource("learningIA.fxml"));
+        Stage stage = new Stage();
+        stage.setTitle("Apprentissage");
+        Scene scene=new Scene(root);
+        stage.setScene(scene);
         stage.show();
-
+        stage.setResizable(false);
 
 
 
