@@ -28,14 +28,12 @@ public class NamePlayerForAI {
     }
     public void StartPlay(ActionEvent actionEvent) throws IOException {
         setName(joueur1.getText());
-        URL url = new File("Interface3.fxml").toURI().toURL();
-        Parent root = FXMLLoader.load(url);
+        Parent root = FXMLLoader.load(getClass().getResource("InterfacePlayIA.fxml"));
         Stage stage = new Stage();
-        stage.setTitle("Play");
+        stage.setTitle("Model's list");
         Scene scene=new Scene(root);
         stage.setScene(scene);
         stage.show();
         stage.setResizable(false);
-        ((Node)(actionEvent.getSource())).getScene().getWindow().hide();
     }
 }

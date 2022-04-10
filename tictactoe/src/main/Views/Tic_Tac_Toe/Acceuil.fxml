@@ -3,10 +3,9 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Tic_Tac_Toe.Acceuil">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Tic_Tac_Toe.Acceuil">
    <children>
-      <Button layoutX="180.0" layoutY="175.0"  onAction="#machine" mnemonicParsing="false" prefHeight="25.0" prefWidth="220.0" text="Contre Machine " />
-      <Button layoutX="180.0" layoutY="260.0" onAction="#friend" mnemonicParsing="false" prefHeight="25.0" prefWidth="220.0" text="Contre Amie" />
+      <Button fx:id="vsmachine" layoutX="180.0" layoutY="175.0" mnemonicParsing="false" onAction="#machine" prefHeight="25.0" prefWidth="220.0" text="Contre Machine " />
+      <Button fx:id="vsamie" layoutX="180.0" layoutY="260.0" mnemonicParsing="false" onAction="#friend" prefHeight="25.0" prefWidth="220.0" text="Contre Amie" />
    </children>
 </AnchorPane>

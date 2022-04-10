@@ -1,14 +1,11 @@
 package Tic_Tac_Toe;
 
 
-import java.io.File;
-import java.io.IOException;
-import java.net.URL;
-import java.time.LocalTime;
-import java.util.ArrayList;
-
 import Tic_Tac_Toe.HelloApplication;
+import javafx.concurrent.Task;
+import javafx.concurrent.WorkerStateEvent;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
@@ -17,18 +14,27 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.CornerRadii;
+import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
-import javafx.scene.text.Text;
-import javafx.stage.Modality;
 import javafx.stage.Stage;
 
-public class InterfacePlay {
+import java.io.File;
+import java.io.IOException;
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+
+public class InterfacePlayIA {
+
+    @FXML
+    Pane panebtn;
 
     Table Table;
     HelloApplication gameScene ;
@@ -39,7 +45,11 @@ public class InterfacePlay {
 
 
     @FXML
+    private Label joueur1;
+
+    @FXML
     private TextField partieG,time;
+
     @FXML
     private Button btn1 ;
     @FXML
@@ -59,129 +69,110 @@ public class InterfacePlay {
     @FXML
     private Button btn9 ;
 
-    @FXML
-    private Button quiter;
-
-    private TextField pgc;
 
     @FXML
-    Button b3,b4;
-
+    private ImageView imageview1 ;
     @FXML
-    Label joueur1,joueur2;
-
-    int startTime = (int) System.currentTimeMillis();
-    LocalTime time1=LocalTime.now();
-    double startTime1 = System.currentTimeMillis();
-    String duration;
-    @FXML
-    private Button rester;
-    @FXML
-    private Button Quitter;
-
-    @FXML
-    private ImageView imageview1;
+    private ImageView imageview2 ;
 
 
-    @FXML
-    private ImageView imageview2;
+    ArrayList<Button> liste = new ArrayList<Button>();
 
 
-    public void initialize() throws Exception {
+    double[] inputs;
+    double[] output;
+
+    boolean[] visited=new boolean[9];
+
+    int indice=0;
+
+    Double[] outputTrie = new Double[9];
+
+
+
+
+
+    public void initialize(){
+
+//        imageview1.getStyleClass().add("imageviewiconM");
+//        imageview2.getStyleClass().add("imageviewiconR");
+        joueur1.setText(NamePlayerForAI.NomJoueur1);
+        liste.add(btn1);
+        liste.add(btn2);
+        liste.add(btn3);
+        liste.add(btn4);
+        liste.add(btn5);
+        liste.add(btn6);
+        liste.add(btn7);
+        liste.add(btn8);
+        liste.add(btn9);
+
+        for(int i=0;i<9;i++){
+            visited[i]=false;
+        }
 
         Joueur humain1= new Joueur();
-        Joueur humain2=new Joueur();
+        Joueur computer=new Joueur();
         humain1.setSymbole(1);
-        humain2.setSymbole(0);
+        computer.setSymbole(0);
         humain1.myTour=true;
         ArrayList<Joueur> players = new ArrayList<Joueur>(2);
         players.add(humain1);
-        players.add(humain2);
+        players.add(computer);
         game = new Table(players);
-        System.out.println(NamePlayer.NomJoueur1);
-        joueur1.setText(NamePlayer.NomJoueur1);
-        joueur2.setText(NamePlayer.NomJoueur2);
-//        imageview1.getStyleClass().add("imageviewiconF");
-//        imageview2.getStyleClass().add("imageviewiconM");
-    }
 
-    @FXML
-    public void quiter(ActionEvent actionEvent) throws IOException {
-        URL url = new File("Alert.fxml").toURI().toURL();
-        Parent root = FXMLLoader.load(url);
-        Stage stage = new Stage();
-        stage.setTitle("Tic Tac Toe");
-        Scene scene=new Scene(root);
-        stage.setScene(scene);
-        stage.show();
-    }
+        game.finish=false;
+
+        inputs = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0};
+        output = HelloController.m.forwardPropagation(inputs);
+
+        for (int i=0; i < output.length; i++) {
+            outputTrie[i] = output[i];
+        }
+        Arrays.sort(outputTrie, Collections.reverseOrder());
+
+        System.out.println("Tableau trié\n");
+        for (double entier : outputTrie) {
+            System.out.println("nombre: " + entier);
+        }
 
 
-
-
-
-
-    @FXML
-    void back(ActionEvent event) throws IOException {
-        ((Node)(event.getSource())).getScene().getWindow().hide();
 
     }
-
-    @FXML
-    void rejouer(ActionEvent event) throws IOException {
-
-        URL url = new File("InterfacePlay.fxml").toURI().toURL();
-        Parent view2 = FXMLLoader.load(url);
-
-        Scene scene2 = new Scene(view2);
-
-        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
-        window.setScene(scene2);
-        window.setTitle("Morpion");
-
-        window.show();
-        ((Node)(event.getSource())).getScene().getWindow().hide();
-
-    }
-
-
-
-
-    @FXML
-    public void jouer(ActionEvent event) throws IOException {
-
-
-        Button btn  = (Button) event.getSource();
-
-        //Gets the button clicked
+    public void jouer(ActionEvent actionEvent) throws IOException {
+        Button btn  = (Button) actionEvent.getSource();
         if(game.finish!=true) {
-            if(game.getPlayers().get(0).myTour==true) {
-                btn1.setDisable(true);
-                btn.setText("X");
-                btn.setStyle("-fx-font: 50 arial;-fx-text-fill: red;");
-                game.getPlayers().get(0).myTour=false;
-                game.getPlayers().get(1).myTour=true;
-                if(game.checkBoard()==true) {
-
-                    game.finish=true;
-                    parg++;
-
+            btn.setText("X");
+            btn.setDisable(true);
+            btn.setStyle("-fx-font: 50 arial;-fx-text-fill: red;");
+            visited[Integer.parseInt(btn.getId())-1]=true;
+            if(visited[indice] && indice<outputTrie.length){
+                for(int i=0;i<output.length;i++){
+                    if(!visited[i]){
+                        indice=i;
+                    }
                 }
             }
-            else if(game.getPlayers().get(1).myTour==true) {
-                btn.setText("O");
-                btn.setStyle("-fx-font: 50 arial; -fx-text-fill: green;");
-                btn.setDisable(true);
-                game.getPlayers().get(0).myTour=true;
-                game.getPlayers().get(1).myTour=false;
-                if(game.checkBoard()==true) {
-                    game.finish=true;
+            if(!visited[indice]){
+                for(Button btn0 :liste){
+                    if((Integer.parseInt(btn0.getId())-1)==indice){
+                        btn0.setText("O");
+                        btn0.setDisable(true);
+                        btn0.setStyle("-fx-font: 50 arial;-fx-text-fill: green;");
+                        visited[indice]=true;
 
-                    parg++;
+                    }
                 }
 
+
             }
-           // partieG.setText(Integer.toString(parg));
+            if (game.checkBoard() == true) {
+
+                game.finish = true;
+                parg++;
+
+            }
+
             String b1 = btn1.getText();
             String b2 = btn2.getText();
             String b3 = btn3.getText();
@@ -194,141 +185,129 @@ public class InterfacePlay {
             String b8 = btn8.getText();
             String b9 = btn9.getText();
 
-            // PLAYER X CODING
-
-            if(b6.equals("X") && b8.equals("X") && b7.equals("X"))
-            {
+            if(b6.equals("X") && b8.equals("X") && b7.equals("X")) {
                 btn6.setBackground(new Background(new BackgroundFill(
                         Color.web("#9036c6"), CornerRadii.EMPTY, Insets.EMPTY)));
                 btn8.setBackground(new Background(new BackgroundFill(
                         Color.web("#9036c6"), CornerRadii.EMPTY, Insets.EMPTY)));
                 btn7.setBackground(new Background(new BackgroundFill(
                         Color.web("#9036c6"), CornerRadii.EMPTY, Insets.EMPTY)));
-                reussiteController.win=NamePlayer.NomJoueur1;
+                reussiteController.win=NamePlayerForAI.NomJoueur1;
                 reussite();
 
             }
 
-            if(b9.equals("X") && b1.equals("X") && b4.equals("X"))
-            {
+            if(b9.equals("X") && b1.equals("X") && b4.equals("X")) {
                 btn9.setBackground(new Background(new BackgroundFill(
                         Color.web("#9036c6"), CornerRadii.EMPTY, Insets.EMPTY)));
                 btn4.setBackground(new Background(new BackgroundFill(
                         Color.web("#9036c6"), CornerRadii.EMPTY, Insets.EMPTY)));
                 btn1.setBackground(new Background(new BackgroundFill(
                         Color.web("#9036c6"), CornerRadii.EMPTY, Insets.EMPTY)));
-                reussiteController.win=NamePlayer.NomJoueur1;
+                reussiteController.win=NamePlayerForAI.NomJoueur1;
                 reussite();
             }
 
-            if(b5.equals("X") && b2.equals("X") && b3.equals("X"))
-            {
+            if(b5.equals("X") && b2.equals("X") && b3.equals("X")) {
                 btn5.setBackground(new Background(new BackgroundFill(
                         Color.web("#9036c6"), CornerRadii.EMPTY, Insets.EMPTY)));
                 btn2.setBackground(new Background(new BackgroundFill(
                         Color.web("#9036c6"), CornerRadii.EMPTY, Insets.EMPTY)));
                 btn3.setBackground(new Background(new BackgroundFill(
                         Color.web("#9036c6"), CornerRadii.EMPTY, Insets.EMPTY)));
-                reussiteController.win=NamePlayer.NomJoueur1;
+                reussiteController.win=NamePlayerForAI.NomJoueur1;
+
                 reussite();
             }
 
-            if(b6.equals("X") && b1.equals("X") && b3.equals("X"))
-            {
+            if(b6.equals("X") && b1.equals("X") && b3.equals("X")) {
                 btn6.setBackground(new Background(new BackgroundFill(
                         Color.web("#9036c6"), CornerRadii.EMPTY, Insets.EMPTY)));
                 btn1.setBackground(new Background(new BackgroundFill(
                         Color.web("#9036c6"), CornerRadii.EMPTY, Insets.EMPTY)));
                 btn3.setBackground(new Background(new BackgroundFill(
                         Color.web("#9036c6"), CornerRadii.EMPTY, Insets.EMPTY)));
-                reussiteController.win=NamePlayer.NomJoueur1;
+                reussiteController.win=NamePlayerForAI.NomJoueur1;
                 reussite();
             }
 
-            if(b5.equals("X") && b1.equals("X") && b7.equals("X"))
-            {
+            if(b5.equals("X") && b1.equals("X") && b7.equals("X")) {
                 btn5.setBackground(new Background(new BackgroundFill(
                         Color.web("#9036c6"), CornerRadii.EMPTY, Insets.EMPTY)));
                 btn1.setBackground(new Background(new BackgroundFill(
                         Color.web("#9036c6"), CornerRadii.EMPTY, Insets.EMPTY)));
                 btn7.setBackground(new Background(new BackgroundFill(
                         Color.web("#9036c6"), CornerRadii.EMPTY, Insets.EMPTY)));
-                reussiteController.win=NamePlayer.NomJoueur1;
+                reussiteController.win=NamePlayerForAI.NomJoueur1;
                 reussite();
             }
-            if(b6.equals("X") && b9.equals("X") && b5.equals("X"))
-            {
+            if(b6.equals("X") && b9.equals("X") && b5.equals("X")) {
                 btn6.setBackground(new Background(new BackgroundFill(
                         Color.web("#9036c6"), CornerRadii.EMPTY, Insets.EMPTY)));
                 btn9.setBackground(new Background(new BackgroundFill(
                         Color.web("#9036c6"), CornerRadii.EMPTY, Insets.EMPTY)));
                 btn5.setBackground(new Background(new BackgroundFill(
                         Color.web("#9036c6"), CornerRadii.EMPTY, Insets.EMPTY)));
-                reussiteController.win=NamePlayer.NomJoueur1;
+                reussiteController.win=NamePlayerForAI.NomJoueur1;
                 reussite();
             }
 
 
-            if(b8.equals("X") && b1.equals("X") && b2.equals("X"))
-            {
+            if(b8.equals("X") && b1.equals("X") && b2.equals("X")) {
                 btn8.setBackground(new Background(new BackgroundFill(
                         Color.web("#9036c6"), CornerRadii.EMPTY, Insets.EMPTY)));
                 btn1.setBackground(new Background(new BackgroundFill(
                         Color.web("#9036c6"), CornerRadii.EMPTY, Insets.EMPTY)));
                 btn2.setBackground(new Background(new BackgroundFill(
                         Color.web("#9036c6"), CornerRadii.EMPTY, Insets.EMPTY)));
-                reussiteController.win=NamePlayer.NomJoueur1;
+                reussiteController.win=NamePlayerForAI.NomJoueur1;
                 reussite();
             }
 
-            if(b7.equals("X") && b4.equals("X") && b3.equals("X"))
-            {
+            if(b7.equals("X") && b4.equals("X") && b3.equals("X")) {
                 btn4.setBackground(new Background(new BackgroundFill(
                         Color.web("#9036c6"), CornerRadii.EMPTY, Insets.EMPTY)));
                 btn3.setBackground(new Background(new BackgroundFill(
                         Color.web("#9036c6"), CornerRadii.EMPTY, Insets.EMPTY)));
                 btn7.setBackground(new Background(new BackgroundFill(
                         Color.web("#9036c6"), CornerRadii.EMPTY, Insets.EMPTY)));
-                reussiteController.win=NamePlayer.NomJoueur1;
+                reussiteController.win=NamePlayerForAI.NomJoueur1;
                 reussite();
             }
             // PLAYER O CODING
 
 
-            if(b6.equals("O") && b8.equals("O") && b7.equals("O"))
-            {
+            if(b6.equals("O") && b8.equals("O") && b7.equals("O")) {
                 btn6.setBackground(new Background(new BackgroundFill(
                         Color.web("#9036c6"), CornerRadii.EMPTY, Insets.EMPTY)));
                 btn8.setBackground(new Background(new BackgroundFill(
                         Color.web("#9036c6"), CornerRadii.EMPTY, Insets.EMPTY)));
                 btn7.setBackground(new Background(new BackgroundFill(
                         Color.web("#9036c6"), CornerRadii.EMPTY, Insets.EMPTY)));
-                reussiteController.win=NamePlayer.NomJoueur2;
+                reussiteController.win="Computer";
                 reussite();
 
             }
 
-            if(b9.equals("O") && b1.equals("O") && b4.equals("O"))
-            {
+            if(b9.equals("O") && b1.equals("O") && b4.equals("O")) {
                 btn9.setBackground(new Background(new BackgroundFill(
                         Color.web("#9036c6"), CornerRadii.EMPTY, Insets.EMPTY)));
                 btn1.setBackground(new Background(new BackgroundFill(
                         Color.web("#9036c6"), CornerRadii.EMPTY, Insets.EMPTY)));
                 btn4.setBackground(new Background(new BackgroundFill(
                         Color.web("#9036c6"), CornerRadii.EMPTY, Insets.EMPTY)));
-                reussiteController.win=NamePlayer.NomJoueur2;
+                reussiteController.win="Computer";
                 reussite();
             }
 
-            if(b5.equals("O") && b2.equals("O") && b3.equals("O"))
-            {
+            if(b5.equals("O") && b2.equals("O") && b3.equals("O")) {
                 btn5.setBackground(new Background(new BackgroundFill(
                         Color.web("#9036c6"), CornerRadii.EMPTY, Insets.EMPTY)));
                 btn2.setBackground(new Background(new BackgroundFill(
                         Color.web("#9036c6"), CornerRadii.EMPTY, Insets.EMPTY)));
                 btn3.setBackground(new Background(new BackgroundFill(
                         Color.web("#9036c6"), CornerRadii.EMPTY, Insets.EMPTY)));
-                reussiteController.win=NamePlayer.NomJoueur2;
+                reussiteController.win="Computer";
                 reussite();
             }
 
@@ -339,7 +318,7 @@ public class InterfacePlay {
                         Color.web("#9036c6"), CornerRadii.EMPTY, Insets.EMPTY)));
                 btn5.setBackground(new Background(new BackgroundFill(
                         Color.web("#9036c6"), CornerRadii.EMPTY, Insets.EMPTY)));
-                reussiteController.win=NamePlayer.NomJoueur2;
+                reussiteController.win="Computer";
                 reussite();
             }
 
@@ -350,7 +329,7 @@ public class InterfacePlay {
                         Color.web("#9036c6"), CornerRadii.EMPTY, Insets.EMPTY)));
                 btn2.setBackground(new Background(new BackgroundFill(
                         Color.web("#9036c6"), CornerRadii.EMPTY, Insets.EMPTY)));
-                reussiteController.win=NamePlayer.NomJoueur2;
+                reussiteController.win="Computer";
                 reussite();
             }
             if(b7.equals("O") && b4.equals("O") && b3.equals("O")) {
@@ -360,7 +339,7 @@ public class InterfacePlay {
                         Color.web("#9036c6"), CornerRadii.EMPTY, Insets.EMPTY)));
                 btn3.setBackground(new Background(new BackgroundFill(
                         Color.web("#9036c6"), CornerRadii.EMPTY, Insets.EMPTY)));
-                reussiteController.win=NamePlayer.NomJoueur2;
+                reussiteController.win="Computer";
                 reussite();
             }
 
@@ -372,7 +351,7 @@ public class InterfacePlay {
                         Color.web("#9036c6"), CornerRadii.EMPTY, Insets.EMPTY)));
                 btn3.setBackground(new Background(new BackgroundFill(
                         Color.web("#9036c6"), CornerRadii.EMPTY, Insets.EMPTY)));
-                reussiteController.win=NamePlayer.NomJoueur2;
+                reussiteController.win="Computer";
                 reussite();
             }
 
@@ -383,23 +362,53 @@ public class InterfacePlay {
                         Color.web("#9036c6"), CornerRadii.EMPTY, Insets.EMPTY)));
                 btn7.setBackground(new Background(new BackgroundFill(
                         Color.web("#9036c6"), CornerRadii.EMPTY, Insets.EMPTY)));
-                reussiteController.win=NamePlayer.NomJoueur2;
+                reussiteController.win="Computer";
                 reussite();
             }
+
         }
 
-
     }
-
     public void reussite() throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("reussite.fxml"));
-        Stage stage=new Stage();
-        stage.setTitle("");
-        stage.setScene(new Scene(root));
-        stage.setResizable(false);
-        stage.show();
 
+        URL url = new File("src/App/vues/reussite.fxml").toURI().toURL();
+        Parent root = FXMLLoader.load(url);
+        Stage stage = new Stage();
+        Scene scene=new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+        stage.setResizable(false);
     }
+
+
+    public void rejouer(ActionEvent actionEvent) throws IOException {
+        URL url = new File("Interface3.fxml").toURI().toURL();
+        Parent view2 = FXMLLoader.load(url);
+
+        Scene scene2 = new Scene(view2);
+
+        Stage window = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
+        window.setScene(scene2);
+        window.setTitle("Morpion");
+
+        window.show();
+        ((Node)(actionEvent.getSource())).getScene().getWindow().hide();
+    }
+
+    public void quiter(ActionEvent actionEvent) throws IOException {
+        URL url = new File("Alert.fxml").toURI().toURL();
+        Parent root = FXMLLoader.load(url);
+        Stage stage = new Stage();
+        stage.setTitle("Tic Tac Toe");
+        Scene scene=new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    public void back(ActionEvent actionEvent) {
+        ((Node)(actionEvent.getSource())).getScene().getWindow().hide();
+    }
+
 
 }
 

@@ -61,8 +61,7 @@ public class HelloController {
 
         ToggleGroup group=new ToggleGroup();
         ToggleGroup group2=new ToggleGroup();
-        easyCheck.setToggleGroup(group);
-        hardCheck.setToggleGroup(group);
+
 
         withFriend.setToggleGroup(group2);
         withComputer.setToggleGroup(group2);
@@ -108,7 +107,7 @@ public class HelloController {
         String facile = r.readLine();
         String difficile = r.readLine();
        if(withComputer.isSelected()){
-          //  if(easyCheck.isSelected()){
+
                 facileSplit = facile.split(":");
                 double lrf = Double.parseDouble(facileSplit[2]);
                 int hf = Integer.parseInt(facileSplit[1]);
@@ -120,7 +119,7 @@ public class HelloController {
                 String path="resources/models/"+fileModelEasy;
                 if(new File(path).exists()){
                     m=MultiLayerPerceptron.load(path);
-                 //   LaunchGame();
+                    LaunchGame();
                 }else{
                     LearningIA();
                 }
@@ -139,7 +138,7 @@ public class HelloController {
                 String path="resources/models/"+fileModelHard;
                 if(new File(path).exists()){
                     m=MultiLayerPerceptron.load(path);
-                  //  LaunchGame();
+                    LaunchGame();
 
                 }else{
                     LearningIA();
@@ -171,7 +170,15 @@ public class HelloController {
         stage.show();
     }
 
-
+    public void LaunchGame() throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("NamePlayerForAI.fxml"));
+        Stage stage = new Stage();
+        stage.setTitle("Model's list");
+        Scene scene=new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+        stage.setResizable(false);
+    }
 
 
 
