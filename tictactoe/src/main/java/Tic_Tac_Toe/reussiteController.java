@@ -42,16 +42,6 @@ public class reussiteController {
         stage.setResizable(false);
         ((Node)(actionEvent.getSource())).getScene().getWindow().hide();
     }
-    @FXML
-    public void quit(ActionEvent actionEvent) throws IOException {
-        URL url = new File("Interface1.fxml").toURI().toURL();
-        Parent root = FXMLLoader.load(url);
-        Stage stage = new Stage();
-        stage.setTitle("Tic Tac Toe");
-        Scene scene=new Scene(root);
-        stage.setScene(scene);
-        stage.show();
-        stage.setResizable(false);
-        ((Node)(actionEvent.getSource())).getScene().getWindow().hide();
-    }
+ 
+
 }
