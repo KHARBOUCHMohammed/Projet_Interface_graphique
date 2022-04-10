@@ -1,2 +1,2 @@
-facile:111:22:33
-difficile:5555:0.22:4
+facile:254:0.1:2
+difficile:1026:0.001:1

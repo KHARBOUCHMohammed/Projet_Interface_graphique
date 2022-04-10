@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Tic_Tac_Toe.Acceuil">
+   <children>
+      <Button layoutX="180.0" layoutY="175.0"  onAction="#machine" mnemonicParsing="false" prefHeight="25.0" prefWidth="220.0" text="Contre Machine " />
+      <Button layoutX="180.0" layoutY="260.0" onAction="#friend" mnemonicParsing="false" prefHeight="25.0" prefWidth="220.0" text="Contre Amie" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.text.Text?>
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="Tic_Tac_Toe.NamePlayer"
+            prefHeight="400.0" prefWidth="600.0">
+
+    <children>
+        <Text  layoutX="68.0" layoutY="128.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Player 1 :">
+
+               </Text>
+        <TextField fx:id="T1" layoutX="166.0" layoutY="111.0" />
+        <Text  layoutX="68.0" layoutY="169.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Player 2 :">
+           ></Text>
+        <TextField fx:id="T2" layoutX="166.0" layoutY="152.0" />
+        <Button fx:id="b3" layoutX="114.0" layoutY="208.0" mnemonicParsing="false" onAction="#StartPlay" prefHeight="50.0" prefWidth="149.0" text="Start Playing" />
+        <Text id="text" layoutX="83.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Please enter your names !" wrappingWidth="211.0">
+           </Text>
+    </children>
+
+</AnchorPane>
