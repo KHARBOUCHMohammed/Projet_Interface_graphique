@@ -19,14 +19,14 @@
             <Button id="6" fx:id="btn6" layoutX="15.0" layoutY="8.0" mnemonicParsing="false" onAction="#jouer" prefHeight="99.0" prefWidth="100.0" styleClass="Btns" />
         </children>
     </Pane>
-    <Button fx:id="play" layoutX="276.0" layoutY="401.0" mnemonicParsing="false" onAction="#rejouer" text="Replay" />
-    <Button fx:id="quiter" layoutX="437.0" layoutY="401.0" mnemonicParsing="false" text="Leave game" />
-    <Button fx:id="back" layoutX="93.0" layoutY="401.0" mnemonicParsing="false" text="Back to menu" />
+    <Button fx:id="rejoue" layoutX="276.0" layoutY="401.0" mnemonicParsing="false" onAction="#rejouer" text="Replay" />
 
-    <Label fx:id="joueur2" layoutX="479.0" layoutY="186.0" prefHeight="17.0" prefWidth="77.0" textAlignment="CENTER" textFill="black">
-s
+    <Button fx:id="retou" layoutX="93.0" layoutY="401.0" mnemonicParsing="false" onAction="#retour" text="Back to menu" />
+
+    <Label fx:id="joueur2" layoutX="479.0" layoutY="186.0" prefHeight="17.0" prefWidth="77.0" textAlignment="CENTER" textFill="BLACK">
+
     </Label>
-    <Label fx:id="joueur1" layoutX="479.0" layoutY="144.0" prefHeight="17.0" prefWidth="77.0" textAlignment="CENTER" textFill="black">
+    <Label fx:id="joueur1" layoutX="479.0" layoutY="144.0" prefHeight="17.0" prefWidth="77.0" textAlignment="CENTER" textFill="BLACK">
 
     </Label>
 

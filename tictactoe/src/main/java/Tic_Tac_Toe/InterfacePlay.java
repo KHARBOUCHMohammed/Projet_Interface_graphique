@@ -31,53 +31,53 @@ import javafx.stage.Stage;
 public class InterfacePlay {
 
     Table Table;
-    HelloApplication gameScene ;
+    HelloApplication gameScene;
     Table game;
     int parg;
 
-    private Button play ;
+    private Button play;
 
 
     @FXML
-    private TextField partieG,time;
+    private TextField partieG, time;
     @FXML
-    private Button btn1 ;
+    private Button btn1;
     @FXML
-    private Button btn2 ;
+    private Button btn2;
     @FXML
-    private Button btn3 ;
+    private Button btn3;
     @FXML
-    private Button btn4 ;
+    private Button btn4;
     @FXML
-    private Button btn5 ;
+    private Button btn5;
     @FXML
     private Button btn6;
     @FXML
-    private Button btn7 ;
+    private Button btn7;
     @FXML
-    private Button btn8 ;
+    private Button btn8;
     @FXML
-    private Button btn9 ;
+    private Button btn9;
+
+
+
+
+
+
 
     @FXML
-    private Button quiter;
-
-    private TextField pgc;
-
-    @FXML
-    Button b3,b4;
-
-    @FXML
-    Label joueur1,joueur2;
+    Label joueur1, joueur2;
 
     int startTime = (int) System.currentTimeMillis();
-    LocalTime time1=LocalTime.now();
+    LocalTime time1 = LocalTime.now();
     double startTime1 = System.currentTimeMillis();
     String duration;
     @FXML
-    private Button rester;
+    private Button rejoue;
     @FXML
-    private Button Quitter;
+    private Button Quitte;
+    @FXML
+    private Button retou;
 
     @FXML
     private ImageView imageview1;
@@ -105,16 +105,7 @@ public class InterfacePlay {
 //        imageview2.getStyleClass().add("imageviewiconM");
     }
 
-    @FXML
-    public void quiter(ActionEvent actionEvent) throws IOException {
-        URL url = new File("Alert.fxml").toURI().toURL();
-        Parent root = FXMLLoader.load(url);
-        Stage stage = new Stage();
-        stage.setTitle("Tic Tac Toe");
-        Scene scene=new Scene(root);
-        stage.setScene(scene);
-        stage.show();
-    }
+
 
 
 
@@ -122,25 +113,33 @@ public class InterfacePlay {
 
 
     @FXML
-    void back(ActionEvent event) throws IOException {
-        ((Node)(event.getSource())).getScene().getWindow().hide();
+    void retour(ActionEvent event) throws IOException {
+        Parent root= FXMLLoader.load(getClass().getResource("Acceuil.fxml"));
+        Stage window=(Stage) retou.getScene().getWindow();
+        window.setTitle("");
+        window.setScene(new Scene(root));
 
     }
 
     @FXML
     void rejouer(ActionEvent event) throws IOException {
 
-        URL url = new File("InterfacePlay.fxml").toURI().toURL();
-        Parent view2 = FXMLLoader.load(url);
+//        URL url = new File("InterfacePlay.fxml").toURI().toURL();
+//        Parent view2 = FXMLLoader.load(url);
+//
+//        Scene scene2 = new Scene(view2);
+//
+//        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+//        window.setScene(scene2);
+//        window.setTitle("Morpion");
+//
+//        window.show();
+//        ((Node)(event.getSource())).getScene().getWindow().hide();
 
-        Scene scene2 = new Scene(view2);
-
-        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
-        window.setScene(scene2);
-        window.setTitle("Morpion");
-
-        window.show();
-        ((Node)(event.getSource())).getScene().getWindow().hide();
+        Parent root= FXMLLoader.load(getClass().getResource("InterfacePlay.fxml"));
+        Stage window=(Stage) rejoue.getScene().getWindow();
+        window.setTitle("");
+        window.setScene(new Scene(root));
 
     }
 
@@ -204,7 +203,7 @@ public class InterfacePlay {
                         Color.web("#9036c6"), CornerRadii.EMPTY, Insets.EMPTY)));
                 btn7.setBackground(new Background(new BackgroundFill(
                         Color.web("#9036c6"), CornerRadii.EMPTY, Insets.EMPTY)));
-                reussiteController.win=NamePlayer.NomJoueur1;
+                Reussite.win=NamePlayer.NomJoueur1;
                 reussite();
 
             }
@@ -217,7 +216,7 @@ public class InterfacePlay {
                         Color.web("#9036c6"), CornerRadii.EMPTY, Insets.EMPTY)));
                 btn1.setBackground(new Background(new BackgroundFill(
                         Color.web("#9036c6"), CornerRadii.EMPTY, Insets.EMPTY)));
-                reussiteController.win=NamePlayer.NomJoueur1;
+                Reussite.win=NamePlayer.NomJoueur1;
                 reussite();
             }
 
@@ -229,7 +228,7 @@ public class InterfacePlay {
                         Color.web("#9036c6"), CornerRadii.EMPTY, Insets.EMPTY)));
                 btn3.setBackground(new Background(new BackgroundFill(
                         Color.web("#9036c6"), CornerRadii.EMPTY, Insets.EMPTY)));
-                reussiteController.win=NamePlayer.NomJoueur1;
+                Reussite.win=NamePlayer.NomJoueur1;
                 reussite();
             }
 
@@ -241,7 +240,7 @@ public class InterfacePlay {
                         Color.web("#9036c6"), CornerRadii.EMPTY, Insets.EMPTY)));
                 btn3.setBackground(new Background(new BackgroundFill(
                         Color.web("#9036c6"), CornerRadii.EMPTY, Insets.EMPTY)));
-                reussiteController.win=NamePlayer.NomJoueur1;
+                Reussite.win=NamePlayer.NomJoueur1;
                 reussite();
             }
 
@@ -253,7 +252,7 @@ public class InterfacePlay {
                         Color.web("#9036c6"), CornerRadii.EMPTY, Insets.EMPTY)));
                 btn7.setBackground(new Background(new BackgroundFill(
                         Color.web("#9036c6"), CornerRadii.EMPTY, Insets.EMPTY)));
-                reussiteController.win=NamePlayer.NomJoueur1;
+                Reussite.win=NamePlayer.NomJoueur1;
                 reussite();
             }
             if(b6.equals("X") && b9.equals("X") && b5.equals("X"))
@@ -264,7 +263,7 @@ public class InterfacePlay {
                         Color.web("#9036c6"), CornerRadii.EMPTY, Insets.EMPTY)));
                 btn5.setBackground(new Background(new BackgroundFill(
                         Color.web("#9036c6"), CornerRadii.EMPTY, Insets.EMPTY)));
-                reussiteController.win=NamePlayer.NomJoueur1;
+                Reussite.win=NamePlayer.NomJoueur1;
                 reussite();
             }
 
@@ -277,7 +276,7 @@ public class InterfacePlay {
                         Color.web("#9036c6"), CornerRadii.EMPTY, Insets.EMPTY)));
                 btn2.setBackground(new Background(new BackgroundFill(
                         Color.web("#9036c6"), CornerRadii.EMPTY, Insets.EMPTY)));
-                reussiteController.win=NamePlayer.NomJoueur1;
+                Reussite.win=NamePlayer.NomJoueur1;
                 reussite();
             }
 
@@ -289,7 +288,7 @@ public class InterfacePlay {
                         Color.web("#9036c6"), CornerRadii.EMPTY, Insets.EMPTY)));
                 btn7.setBackground(new Background(new BackgroundFill(
                         Color.web("#9036c6"), CornerRadii.EMPTY, Insets.EMPTY)));
-                reussiteController.win=NamePlayer.NomJoueur1;
+                Reussite.win=NamePlayer.NomJoueur1;
                 reussite();
             }
             // PLAYER O CODING
@@ -303,7 +302,7 @@ public class InterfacePlay {
                         Color.web("#9036c6"), CornerRadii.EMPTY, Insets.EMPTY)));
                 btn7.setBackground(new Background(new BackgroundFill(
                         Color.web("#9036c6"), CornerRadii.EMPTY, Insets.EMPTY)));
-                reussiteController.win=NamePlayer.NomJoueur2;
+                Reussite.win=NamePlayer.NomJoueur2;
                 reussite();
 
             }
@@ -316,7 +315,7 @@ public class InterfacePlay {
                         Color.web("#9036c6"), CornerRadii.EMPTY, Insets.EMPTY)));
                 btn4.setBackground(new Background(new BackgroundFill(
                         Color.web("#9036c6"), CornerRadii.EMPTY, Insets.EMPTY)));
-                reussiteController.win=NamePlayer.NomJoueur2;
+                Reussite.win=NamePlayer.NomJoueur2;
                 reussite();
             }
 
@@ -328,7 +327,7 @@ public class InterfacePlay {
                         Color.web("#9036c6"), CornerRadii.EMPTY, Insets.EMPTY)));
                 btn3.setBackground(new Background(new BackgroundFill(
                         Color.web("#9036c6"), CornerRadii.EMPTY, Insets.EMPTY)));
-                reussiteController.win=NamePlayer.NomJoueur2;
+                Reussite.win=NamePlayer.NomJoueur2;
                 reussite();
             }
 
@@ -339,7 +338,7 @@ public class InterfacePlay {
                         Color.web("#9036c6"), CornerRadii.EMPTY, Insets.EMPTY)));
                 btn5.setBackground(new Background(new BackgroundFill(
                         Color.web("#9036c6"), CornerRadii.EMPTY, Insets.EMPTY)));
-                reussiteController.win=NamePlayer.NomJoueur2;
+                Reussite.win=NamePlayer.NomJoueur2;
                 reussite();
             }
 
@@ -350,7 +349,7 @@ public class InterfacePlay {
                         Color.web("#9036c6"), CornerRadii.EMPTY, Insets.EMPTY)));
                 btn2.setBackground(new Background(new BackgroundFill(
                         Color.web("#9036c6"), CornerRadii.EMPTY, Insets.EMPTY)));
-                reussiteController.win=NamePlayer.NomJoueur2;
+                Reussite.win=NamePlayer.NomJoueur2;
                 reussite();
             }
             if(b7.equals("O") && b4.equals("O") && b3.equals("O")) {
@@ -360,7 +359,7 @@ public class InterfacePlay {
                         Color.web("#9036c6"), CornerRadii.EMPTY, Insets.EMPTY)));
                 btn3.setBackground(new Background(new BackgroundFill(
                         Color.web("#9036c6"), CornerRadii.EMPTY, Insets.EMPTY)));
-                reussiteController.win=NamePlayer.NomJoueur2;
+                Reussite.win=NamePlayer.NomJoueur2;
                 reussite();
             }
 
@@ -372,7 +371,7 @@ public class InterfacePlay {
                         Color.web("#9036c6"), CornerRadii.EMPTY, Insets.EMPTY)));
                 btn3.setBackground(new Background(new BackgroundFill(
                         Color.web("#9036c6"), CornerRadii.EMPTY, Insets.EMPTY)));
-                reussiteController.win=NamePlayer.NomJoueur2;
+                Reussite.win=NamePlayer.NomJoueur2;
                 reussite();
             }
 
@@ -383,7 +382,7 @@ public class InterfacePlay {
                         Color.web("#9036c6"), CornerRadii.EMPTY, Insets.EMPTY)));
                 btn7.setBackground(new Background(new BackgroundFill(
                         Color.web("#9036c6"), CornerRadii.EMPTY, Insets.EMPTY)));
-                reussiteController.win=NamePlayer.NomJoueur2;
+                Reussite.win=NamePlayer.NomJoueur2;
                 reussite();
             }
         }

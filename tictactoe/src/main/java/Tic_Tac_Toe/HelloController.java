@@ -22,10 +22,7 @@ import java.nio.charset.StandardCharsets;
 public class HelloController {
 
     @FXML
-    private RadioButton easyCheck;
-
-    @FXML
-    private RadioButton hardCheck;
+    private Button retou;
 
     @FXML
     private ToggleButton withFriend;
@@ -171,7 +168,28 @@ public class HelloController {
     }
 
     public void LaunchGame() throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("NamePlayerForAI.fxml"));
+//        Parent root = FXMLLoader.load(getClass().getResource("NamePlayerForAI.fxml"));
+//        Stage stage = new Stage();
+//        stage.setTitle("Model's list");
+//        Scene scene=new Scene(root);
+//        stage.setScene(scene);
+//        stage.show();
+//        stage.setResizable(false);
+        Parent root= FXMLLoader.load(getClass().getResource("NamePlayerForAI.fxml"));
+        Stage window=(Stage) retou.getScene().getWindow();
+        window.setTitle("NamePlayerForAI");
+        window.setScene(new Scene(root));
+    }
+
+    public void retour() throws IOException {
+        Parent root= FXMLLoader.load(getClass().getResource("Acceuil.fxml"));
+        Stage window=(Stage) retou.getScene().getWindow();
+        window.setTitle("");
+        window.setScene(new Scene(root));
+    }
+
+    public void ListeModele(ActionEvent actionEvent) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("ListeModele.fxml"));
         Stage stage = new Stage();
         stage.setTitle("Model's list");
         Scene scene=new Scene(root);
@@ -180,12 +198,11 @@ public class HelloController {
         stage.setResizable(false);
     }
 
+    public void about(ActionEvent actionEvent) throws IOException {
 
-
-    public void ListeModele(ActionEvent actionEvent) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("ListeModele.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("About.fxml"));
         Stage stage = new Stage();
-        stage.setTitle("Model's list");
+        stage.setTitle("About Game");
         Scene scene=new Scene(root);
         stage.setScene(scene);
         stage.show();

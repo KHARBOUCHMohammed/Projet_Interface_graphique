@@ -33,8 +33,14 @@ import java.util.List;
 
 public class InterfacePlayIA {
 
+
     @FXML
-    Pane panebtn;
+    private Button quitte;
+    @FXML
+    private Button retou;
+    @FXML
+    private Button rejoue;
+
 
     Table Table;
     HelloApplication gameScene ;
@@ -192,7 +198,7 @@ public class InterfacePlayIA {
                         Color.web("#9036c6"), CornerRadii.EMPTY, Insets.EMPTY)));
                 btn7.setBackground(new Background(new BackgroundFill(
                         Color.web("#9036c6"), CornerRadii.EMPTY, Insets.EMPTY)));
-                reussiteController.win=NamePlayerForAI.NomJoueur1;
+                Reussite.win=NamePlayerForAI.NomJoueur1;
                 reussite();
 
             }
@@ -204,7 +210,7 @@ public class InterfacePlayIA {
                         Color.web("#9036c6"), CornerRadii.EMPTY, Insets.EMPTY)));
                 btn1.setBackground(new Background(new BackgroundFill(
                         Color.web("#9036c6"), CornerRadii.EMPTY, Insets.EMPTY)));
-                reussiteController.win=NamePlayerForAI.NomJoueur1;
+                Reussite.win=NamePlayerForAI.NomJoueur1;
                 reussite();
             }
 
@@ -215,7 +221,7 @@ public class InterfacePlayIA {
                         Color.web("#9036c6"), CornerRadii.EMPTY, Insets.EMPTY)));
                 btn3.setBackground(new Background(new BackgroundFill(
                         Color.web("#9036c6"), CornerRadii.EMPTY, Insets.EMPTY)));
-                reussiteController.win=NamePlayerForAI.NomJoueur1;
+                Reussite.win=NamePlayerForAI.NomJoueur1;
 
                 reussite();
             }
@@ -227,7 +233,7 @@ public class InterfacePlayIA {
                         Color.web("#9036c6"), CornerRadii.EMPTY, Insets.EMPTY)));
                 btn3.setBackground(new Background(new BackgroundFill(
                         Color.web("#9036c6"), CornerRadii.EMPTY, Insets.EMPTY)));
-                reussiteController.win=NamePlayerForAI.NomJoueur1;
+                Reussite.win=NamePlayerForAI.NomJoueur1;
                 reussite();
             }
 
@@ -238,7 +244,7 @@ public class InterfacePlayIA {
                         Color.web("#9036c6"), CornerRadii.EMPTY, Insets.EMPTY)));
                 btn7.setBackground(new Background(new BackgroundFill(
                         Color.web("#9036c6"), CornerRadii.EMPTY, Insets.EMPTY)));
-                reussiteController.win=NamePlayerForAI.NomJoueur1;
+                Reussite.win=NamePlayerForAI.NomJoueur1;
                 reussite();
             }
             if(b6.equals("X") && b9.equals("X") && b5.equals("X")) {
@@ -248,7 +254,7 @@ public class InterfacePlayIA {
                         Color.web("#9036c6"), CornerRadii.EMPTY, Insets.EMPTY)));
                 btn5.setBackground(new Background(new BackgroundFill(
                         Color.web("#9036c6"), CornerRadii.EMPTY, Insets.EMPTY)));
-                reussiteController.win=NamePlayerForAI.NomJoueur1;
+                Reussite.win=NamePlayerForAI.NomJoueur1;
                 reussite();
             }
 
@@ -260,7 +266,7 @@ public class InterfacePlayIA {
                         Color.web("#9036c6"), CornerRadii.EMPTY, Insets.EMPTY)));
                 btn2.setBackground(new Background(new BackgroundFill(
                         Color.web("#9036c6"), CornerRadii.EMPTY, Insets.EMPTY)));
-                reussiteController.win=NamePlayerForAI.NomJoueur1;
+                Reussite.win=NamePlayerForAI.NomJoueur1;
                 reussite();
             }
 
@@ -271,10 +277,10 @@ public class InterfacePlayIA {
                         Color.web("#9036c6"), CornerRadii.EMPTY, Insets.EMPTY)));
                 btn7.setBackground(new Background(new BackgroundFill(
                         Color.web("#9036c6"), CornerRadii.EMPTY, Insets.EMPTY)));
-                reussiteController.win=NamePlayerForAI.NomJoueur1;
+                Reussite.win=NamePlayerForAI.NomJoueur1;
                 reussite();
             }
-            // PLAYER O CODING
+            // Computer O CODING
 
 
             if(b6.equals("O") && b8.equals("O") && b7.equals("O")) {
@@ -284,7 +290,7 @@ public class InterfacePlayIA {
                         Color.web("#9036c6"), CornerRadii.EMPTY, Insets.EMPTY)));
                 btn7.setBackground(new Background(new BackgroundFill(
                         Color.web("#9036c6"), CornerRadii.EMPTY, Insets.EMPTY)));
-                reussiteController.win="Computer";
+                Reussite.win="Computer";
                 reussite();
 
             }
@@ -296,7 +302,7 @@ public class InterfacePlayIA {
                         Color.web("#9036c6"), CornerRadii.EMPTY, Insets.EMPTY)));
                 btn4.setBackground(new Background(new BackgroundFill(
                         Color.web("#9036c6"), CornerRadii.EMPTY, Insets.EMPTY)));
-                reussiteController.win="Computer";
+                Reussite.win="Computer";
                 reussite();
             }
 
@@ -307,7 +313,7 @@ public class InterfacePlayIA {
                         Color.web("#9036c6"), CornerRadii.EMPTY, Insets.EMPTY)));
                 btn3.setBackground(new Background(new BackgroundFill(
                         Color.web("#9036c6"), CornerRadii.EMPTY, Insets.EMPTY)));
-                reussiteController.win="Computer";
+                Reussite.win="Computer";
                 reussite();
             }
 
@@ -318,7 +324,7 @@ public class InterfacePlayIA {
                         Color.web("#9036c6"), CornerRadii.EMPTY, Insets.EMPTY)));
                 btn5.setBackground(new Background(new BackgroundFill(
                         Color.web("#9036c6"), CornerRadii.EMPTY, Insets.EMPTY)));
-                reussiteController.win="Computer";
+                Reussite.win="Computer";
                 reussite();
             }
 
@@ -329,7 +335,7 @@ public class InterfacePlayIA {
                         Color.web("#9036c6"), CornerRadii.EMPTY, Insets.EMPTY)));
                 btn2.setBackground(new Background(new BackgroundFill(
                         Color.web("#9036c6"), CornerRadii.EMPTY, Insets.EMPTY)));
-                reussiteController.win="Computer";
+                Reussite.win="Computer";
                 reussite();
             }
             if(b7.equals("O") && b4.equals("O") && b3.equals("O")) {
@@ -339,7 +345,7 @@ public class InterfacePlayIA {
                         Color.web("#9036c6"), CornerRadii.EMPTY, Insets.EMPTY)));
                 btn3.setBackground(new Background(new BackgroundFill(
                         Color.web("#9036c6"), CornerRadii.EMPTY, Insets.EMPTY)));
-                reussiteController.win="Computer";
+                Reussite.win="Computer";
                 reussite();
             }
 
@@ -351,7 +357,7 @@ public class InterfacePlayIA {
                         Color.web("#9036c6"), CornerRadii.EMPTY, Insets.EMPTY)));
                 btn3.setBackground(new Background(new BackgroundFill(
                         Color.web("#9036c6"), CornerRadii.EMPTY, Insets.EMPTY)));
-                reussiteController.win="Computer";
+                Reussite.win="Computer";
                 reussite();
             }
 
@@ -362,7 +368,7 @@ public class InterfacePlayIA {
                         Color.web("#9036c6"), CornerRadii.EMPTY, Insets.EMPTY)));
                 btn7.setBackground(new Background(new BackgroundFill(
                         Color.web("#9036c6"), CornerRadii.EMPTY, Insets.EMPTY)));
-                reussiteController.win="Computer";
+                Reussite.win="Computer";
                 reussite();
             }
 
@@ -371,43 +377,60 @@ public class InterfacePlayIA {
     }
     public void reussite() throws IOException {
 
-        URL url = new File("src/App/vues/reussite.fxml").toURI().toURL();
-        Parent root = FXMLLoader.load(url);
+        Parent root = FXMLLoader.load(getClass().getResource("reussite.fxml"));
         Stage stage = new Stage();
+        stage.setTitle("");
         Scene scene=new Scene(root);
         stage.setScene(scene);
         stage.show();
         stage.setResizable(false);
+
+
+
+
     }
 
 
     public void rejouer(ActionEvent actionEvent) throws IOException {
-        URL url = new File("Interface3.fxml").toURI().toURL();
-        Parent view2 = FXMLLoader.load(url);
+//        URL url = new File("InterfacePlayIA.fxml").toURI().toURL();
+//        Parent view2 = FXMLLoader.load(url);
+//
+//        Scene scene2 = new Scene(view2);
+//
+//        Stage window = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
+//        window.setScene(scene2);
+//        window.setTitle("Morpion");
+//
+//        window.show();
+//        ((Node)(actionEvent.getSource())).getScene().getWindow().hide();
 
-        Scene scene2 = new Scene(view2);
 
-        Stage window = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
-        window.setScene(scene2);
-        window.setTitle("Morpion");
+//        Parent root = FXMLLoader.load(getClass().getResource("InterfacePlayIA.fxml"));
+//        Stage stage = new Stage();
+//        stage.setTitle("playing IA");
+//        Scene scene=new Scene(root);
+//        stage.setScene(scene);
+//        stage.show();
+//        stage.setResizable(false);
 
-        window.show();
-        ((Node)(actionEvent.getSource())).getScene().getWindow().hide();
+        Parent root= FXMLLoader.load(getClass().getResource("InterfacePlayIA.fxml"));
+        Stage window=(Stage) rejoue.getScene().getWindow();
+        window.setTitle("");
+        window.setScene(new Scene(root));
     }
 
-    public void quiter(ActionEvent actionEvent) throws IOException {
-        URL url = new File("Alert.fxml").toURI().toURL();
-        Parent root = FXMLLoader.load(url);
-        Stage stage = new Stage();
-        stage.setTitle("Tic Tac Toe");
-        Scene scene=new Scene(root);
-        stage.setScene(scene);
-        stage.show();
+
+
+
+
+    public void retour(ActionEvent actionEvent) throws IOException {
+        Parent root= FXMLLoader.load(getClass().getResource("Acceuil.fxml"));
+        Stage window=(Stage) retou.getScene().getWindow();
+        window.setTitle("");
+        window.setScene(new Scene(root));
+
     }
 
-    public void back(ActionEvent actionEvent) {
-        ((Node)(actionEvent.getSource())).getScene().getWindow().hide();
-    }
 
 
 }

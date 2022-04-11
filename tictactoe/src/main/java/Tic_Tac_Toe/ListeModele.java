@@ -36,8 +36,8 @@ public class ListeModele {
             }
 
         });
-        String dir= "resources/models";
-        File file = new File(dir);
+        String directory= "resources/models";
+        File file = new File(directory);
         File[] files = file.listFiles();
         if (files != null) {
             for (int i = 0; i < files.length; i++) {

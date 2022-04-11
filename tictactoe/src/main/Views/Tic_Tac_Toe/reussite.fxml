@@ -7,8 +7,8 @@
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Tic_Tac_Toe.Reussite">
 
     <children>
-        <Button fx:id="b1" layoutX="39.0" layoutY="164.0" mnemonicParsing="false" onAction="#replay" text="Yes please !" />
-        <Button fx:id="b2" layoutX="222.0" layoutY="164.0" mnemonicParsing="false" onAction="#quit" text="No thanks !" />
+        <Button fx:id="rejoue" layoutX="39.0" layoutY="164.0" mnemonicParsing="false" onAction="#replay" text="Yes please !" />
+        <Button fx:id="quitte" layoutX="222.0" layoutY="164.0" mnemonicParsing="false" onAction="#quitter" text="No thanks !" />
         <Text id="fancytext" layoutX="9.0" layoutY="97.0" strokeType="OUTSIDE" strokeWidth="0.0" text="THE WINNER IS ">
 
         </Text>

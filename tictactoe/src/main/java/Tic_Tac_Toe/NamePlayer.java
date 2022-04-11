@@ -17,9 +17,12 @@ import javafx.stage.Stage;
 
 public class NamePlayer{
     @FXML
-    Button b3;
+    Button play;
+
     @FXML
-    TextField T1,T2;
+    Button retou;
+    @FXML
+    TextField Text1,Text2;
     public static String NomJoueur2;
     public static String NomJoueur1;
 
@@ -31,7 +34,7 @@ public class NamePlayer{
     @FXML
     public void StartPlay(ActionEvent e) throws IOException {
 
-//        setName(T1.getText(),T2.getText());
+       setName(Text1.getText(),Text2.getText());
 
 
 //        Parent root = FXMLLoader.load(getClass().getResource("InterfacePlay.fxml"));
@@ -41,17 +44,33 @@ public class NamePlayer{
 //        stage.setScene(scene);
 //        stage.setResizable(false);
 
-        Parent root = FXMLLoader.load(getClass().getResource("InterfacePlay.fxml"));
-        Stage stage=new Stage();
-        stage.setTitle("Play");
-        stage.setScene(new Scene(root));
-        stage.setResizable(false);
-        stage.show();
+//        Parent root = FXMLLoader.load(getClass().getResource("InterfacePlay.fxml"));
+//        Stage stage=new Stage();
+//        stage.setTitle("Play");
+//        stage.setScene(new Scene(root));
+//        stage.setResizable(false);
+//        stage.show();
+
+        Parent root= FXMLLoader.load(getClass().getResource("InterfacePlay.fxml"));
+        Stage window=(Stage) play.getScene().getWindow();
+        window.setTitle("");
+        window.setScene(new Scene(root));
 
 //        ((Node)(e.getSource())).getScene().getWindow().hide();
 //
 
     }
+    public void retour(ActionEvent e) throws IOException {
 
+
+        Parent root= FXMLLoader.load(getClass().getResource("Acceuil.fxml"));
+        Stage window=(Stage) retou.getScene().getWindow();
+        window.setTitle("");
+        window.setScene(new Scene(root));
+
+//        ((Node)(e.getSource())).getScene().getWindow().hide();
+//
+
+    }
 
 }

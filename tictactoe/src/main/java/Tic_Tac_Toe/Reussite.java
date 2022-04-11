@@ -18,9 +18,9 @@ import java.util.Locale;
 
 public class Reussite {
     @FXML
-    private Button b1;
+    private Button rejoue;
     @FXML
-    private Button b2;
+    private Button quitte;
 
     @FXML
     private Text winner;
@@ -32,20 +32,30 @@ public class Reussite {
     }
     @FXML
     public void replay(ActionEvent actionEvent) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("InterfacePlay.fxml"));
-        Stage stage=new Stage();
-        stage.setTitle("Apprentissage");
-        stage.setScene(new Scene(root));
-        stage.setResizable(false);
-        stage.show();
+//        Parent root = FXMLLoader.load(getClass().getResource("InterfacePlay.fxml"));
+//        Stage stage=new Stage();
+//        stage.setTitle("playing game");
+//        stage.setScene(new Scene(root));
+//        stage.setResizable(false);
+//        stage.show();
+
+        Parent root= FXMLLoader.load(getClass().getResource("InterfacePlay.fxml"));
+        Stage window=(Stage) rejoue.getScene().getWindow();
+        window.setTitle("");
+        window.setScene(new Scene(root));
     }
     @FXML
-    public void quit(ActionEvent actionEvent) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("PremiereInterface.fxml"));
-       Stage stage=new Stage();
-        stage.setTitle("Apprentissage");
-        stage.setScene(new Scene(root));
-        stage.setResizable(false);
-        stage.show();
+    public void quitter(ActionEvent actionEvent) throws IOException {
+//        Parent root = FXMLLoader.load(getClass().getResource("PremiereInterface.fxml"));
+//       Stage stage=new Stage();
+//        stage.setTitle("");
+//        stage.setScene(new Scene(root));
+//        stage.setResizable(false);
+//        stage.show();
+
+        Parent root= FXMLLoader.load(getClass().getResource("Alert.fxml"));
+        Stage window=(Stage) quitte.getScene().getWindow();
+        window.setTitle("");
+        window.setScene(new Scene(root));
     }
 }
