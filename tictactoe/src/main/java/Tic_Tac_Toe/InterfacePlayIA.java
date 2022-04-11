@@ -1,15 +1,10 @@
 package Tic_Tac_Toe;
 
 
-import Tic_Tac_Toe.HelloApplication;
-import javafx.concurrent.Task;
-import javafx.concurrent.WorkerStateEvent;
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -19,17 +14,13 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.CornerRadii;
-import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
-import java.io.File;
 import java.io.IOException;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
-import java.util.List;
 
 public class InterfacePlayIA {
 
@@ -43,7 +34,7 @@ public class InterfacePlayIA {
 
 
     Table Table;
-    HelloApplication gameScene ;
+    Main gameScene ;
     Table game;
     int parg;
 
@@ -130,7 +121,7 @@ public class InterfacePlayIA {
         game.finish=false;
 
         inputs = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0};
-        output = HelloController.m.forwardPropagation(inputs);
+        output = PremiereInterface.m.forwardPropagation(inputs);
 
         for (int i=0; i < output.length; i++) {
             outputTrie[i] = output[i];

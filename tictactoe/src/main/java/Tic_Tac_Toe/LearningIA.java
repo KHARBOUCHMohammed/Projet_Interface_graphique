@@ -169,14 +169,11 @@ import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.concurrent.Task;
 import javafx.concurrent.WorkerStateEvent;
-import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
@@ -187,7 +184,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.HashMap;
 
-import static Tic_Tac_Toe.HelloController.*;
+import static Tic_Tac_Toe.PremiereInterface.*;
 
 public class LearningIA {
 
@@ -254,22 +251,18 @@ public class LearningIA {
                 public void handle(WorkerStateEvent workerStateEvent) {
 
                     textField.getScene().getWindow().hide();
-                    try {
-                        url = new File("PremiereInterface.fxml").toURI().toURL();
-                    } catch (MalformedURLException e) {
-                        e.printStackTrace();
-                    }
-                    Parent root= null;
-                    try {
-                        root = FXMLLoader.load(url);
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                    Stage stage=new Stage();
-                    stage.setTitle("Tic Tac Toe");
-                    stage.setScene(new Scene(root));
-                    stage.setResizable(false);
-                    stage.show();
+
+                    Parent root =null;
+                  try {
+            root = FXMLLoader.load(getClass().getResource("NamePlayerForIA.fxml"));
+           }catch (IOException e){
+            Stage stage=new Stage();
+            stage.setTitle("playing game");
+            stage.setScene(new Scene(root));
+            stage.setResizable(false);
+            stage.show();
+        }
+
                 }
             });
 

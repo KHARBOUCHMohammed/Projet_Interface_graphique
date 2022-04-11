@@ -39,7 +39,7 @@ public class Reussite {
 //        stage.setResizable(false);
 //        stage.show();
 
-        Parent root= FXMLLoader.load(getClass().getResource("InterfacePlay.fxml"));
+        Parent root= FXMLLoader.load(getClass().getResource("PremiereInterface.fxml"));
         Stage window=(Stage) rejoue.getScene().getWindow();
         window.setTitle("");
         window.setScene(new Scene(root));
@@ -53,7 +53,7 @@ public class Reussite {
 //        stage.setResizable(false);
 //        stage.show();
 
-        Parent root= FXMLLoader.load(getClass().getResource("Alert.fxml"));
+        Parent root= FXMLLoader.load(getClass().getResource(""));
         Stage window=(Stage) quitte.getScene().getWindow();
         window.setTitle("");
         window.setScene(new Scene(root));

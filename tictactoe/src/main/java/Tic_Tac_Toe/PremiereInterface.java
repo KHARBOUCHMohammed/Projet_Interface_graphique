@@ -19,7 +19,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
 
-public class HelloController {
+public class PremiereInterface {
 
     @FXML
     private Button retou;
@@ -46,9 +46,9 @@ public class HelloController {
     private ImageView imageView1;
 
 
-    String[] difficileSplit ;
+    String[] tabdifficile ;
 
-    String[] facileSplit;
+    String[] tabfacile;
 
     String source = "resources/config.txt";
 
@@ -105,10 +105,12 @@ public class HelloController {
         String difficile = r.readLine();
        if(withComputer.isSelected()){
 
-                facileSplit = facile.split(":");
-                double lrf = Double.parseDouble(facileSplit[2]);
-                int hf = Integer.parseInt(facileSplit[1]);
-                int lf= Integer.parseInt(facileSplit[3]);
+                tabfacile = facile.split(":");
+                int hf = Integer.parseInt(tabfacile[1]);
+
+                double lrf = Double.parseDouble(tabfacile[2]);
+
+                int lf= Integer.parseInt(tabfacile[3]);
                 setH(hf);
                 setL(lf);
                 setLr(lrf);
@@ -122,11 +124,13 @@ public class HelloController {
                 }
             }else if(withFriend.isSelected()) {
 
-                difficileSplit = difficile.split(":");
+                tabdifficile = difficile.split(":");
 
-                double lrd = Double.parseDouble(difficileSplit[2]);
-                int hd = Integer.parseInt(difficileSplit[1]);
-                int ld = Integer.parseInt(difficileSplit[3]);
+                int hd = Integer.parseInt(tabdifficile[1]);
+
+                double lrd = Double.parseDouble(tabdifficile[2]);
+
+                int ld = Integer.parseInt(tabdifficile[3]);
                 setH(hd);
                 setLr(lrd);
                 setL(ld);

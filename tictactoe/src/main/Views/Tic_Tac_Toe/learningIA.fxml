@@ -3,10 +3,17 @@
 <?import javafx.scene.control.ProgressBar?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Tic_Tac_Toe.LearningIA">
    <children>
       <ProgressBar fx:id="progressBar" layoutX="137.0" layoutY="243.0" prefHeight="18.0" prefWidth="327.0" progress="0.0" />
-      <TextField fx:id="textField" layoutX="139.0" layoutY="129.0" prefHeight="25.0" prefWidth="327.0" />
+      <TextField fx:id="textField" layoutX="137.0" layoutY="188.0" prefHeight="25.0" prefWidth="327.0" />
+      <Text layoutX="180.0" layoutY="94.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Apprentissage " textAlignment="CENTER" wrappingWidth="248.978515625">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Text>
    </children>
 </AnchorPane>

@@ -8,20 +8,20 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Tic_Tac_Toe.NamePlayerForAI">
     <children>
-        <Text fill="Black" layoutX="68.0" layoutY="128.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Player  :">
+        <Text fill="Black" layoutX="87.0" layoutY="190.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Player  :">
             <font>
                 <Font name="System Bold" size="14.0" />
             </font></Text>
-        <TextField fx:id="player1" layoutX="166.0" layoutY="111.0" />
-        <Text fill="Black" layoutX="68.0" layoutY="169.0" strokeType="OUTSIDE" strokeWidth="0.0">
+        <TextField fx:id="player1" layoutX="171.0" layoutY="172.0" prefHeight="25.0" prefWidth="330.0" />
+        <Text fill="Black" layoutX="113.0" layoutY="224.0" strokeType="OUTSIDE" strokeWidth="0.0">
             <font>
                 <Font name="System Bold" size="14.0" />
             </font></Text>
-        <Button fx:id="play" layoutX="101.0" layoutY="182.0" mnemonicParsing="false" onAction="#StartPlay" prefHeight="50.0" prefWidth="149.0" text="Start Playing" />
-        <Text id="text" layoutX="83.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Please enter your name !" wrappingWidth="211.0">
+        <Button fx:id="play" layoutX="374.0" layoutY="315.0" mnemonicParsing="false" onAction="#StartPlay" prefHeight="19.0" prefWidth="149.0" text="Start Playing" />
+        <Text id="text" layoutX="195.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Please enter your name !" wrappingWidth="211.0">
             <font>
                 <Font name="System Bold" size="16.0" />
             </font></Text>
-      <Button fx:id="retou" layoutX="101.0" layoutY="241.0" mnemonicParsing="false" onAction="#retour" prefHeight="50.0" prefWidth="149.0" text="Retour" />
+      <Button fx:id="retou" layoutX="68.0" layoutY="315.0" mnemonicParsing="false" onAction="#retour" prefHeight="25.0" prefWidth="149.0" text="Retour" />
     </children>
 </AnchorPane>

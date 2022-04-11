@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Tic_Tac_Toe.HelloController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Tic_Tac_Toe.PremiereInterface">
    <children>
       <Button fx:id="buttonCon" layoutX="356.0" layoutY="361.0" mnemonicParsing="false" onAction="#onClickContinue" prefHeight="25.0" prefWidth="230.0" text="Commencer la partie " />
        <Button fx:id="retou" layoutX="14.0" layoutY="361.0" mnemonicParsing="false" onAction="#retour" prefHeight="25.0" prefWidth="230.0" text="Retour" />
