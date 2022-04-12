@@ -2,7 +2,6 @@ package Tic_Tac_Toe;
 
 
 import java.io.IOException;
-import java.time.LocalTime;
 import java.util.ArrayList;
 
 import javafx.event.ActionEvent;
@@ -13,8 +12,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
-import javafx.scene.image.ImageView;
+
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.CornerRadii;
@@ -23,16 +21,13 @@ import javafx.stage.Stage;
 
 public class InterfacePlay {
 
-    Table Table;
-    Main gameScene;
+
     Table game;
     int parg;
 
-    private Button play;
 
 
-    @FXML
-    private TextField partieG, time;
+
     @FXML
     private Button btn1;
     @FXML
@@ -61,23 +56,14 @@ public class InterfacePlay {
     @FXML
     Label joueur1, joueur2;
 
-    int startTime = (int) System.currentTimeMillis();
-    LocalTime time1 = LocalTime.now();
-    double startTime1 = System.currentTimeMillis();
-    String duration;
+
     @FXML
     private Button rejoue;
-    @FXML
-    private Button Quitte;
+
     @FXML
     private Button retou;
 
-    @FXML
-    private ImageView imageview1;
 
-
-    @FXML
-    private ImageView imageview2;
 
 
     public void initialize() throws Exception {
@@ -94,8 +80,7 @@ public class InterfacePlay {
         System.out.println(NamePlayer.NomJoueur1);
         joueur1.setText(NamePlayer.NomJoueur1);
         joueur2.setText(NamePlayer.NomJoueur2);
-//        imageview1.getStyleClass().add("imageviewiconF");
-//        imageview2.getStyleClass().add("imageviewiconM");
+
     }
 
 
@@ -117,17 +102,6 @@ public class InterfacePlay {
     @FXML
     void rejouer(ActionEvent event) throws IOException {
 
-//        URL url = new File("InterfacePlay.fxml").toURI().toURL();
-//        Parent view2 = FXMLLoader.load(url);
-//
-//        Scene scene2 = new Scene(view2);
-//
-//        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
-//        window.setScene(scene2);
-//        window.setTitle("Morpion");
-//
-//        window.show();
-//        ((Node)(event.getSource())).getScene().getWindow().hide();
 
         Parent root= FXMLLoader.load(getClass().getResource("InterfacePlay.fxml"));
         Stage window=(Stage) rejoue.getScene().getWindow();

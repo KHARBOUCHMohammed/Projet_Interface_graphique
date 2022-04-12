@@ -40,9 +40,9 @@ public class ConfigAI {
     @FXML
     private Text text2;
 
-    String[] difficileSplit ;
+    String[] dif ;
 
-    String[] facileSplit;
+    String[] fac;
 
     String source = "resources/config.txt";
 
@@ -59,16 +59,17 @@ public class ConfigAI {
         String facile = r.readLine();
         String difficile = r.readLine();
 
-        facileSplit = facile.split(":");
-        Lr1.setText(""+facileSplit[1]);
-        h1.setText(""+facileSplit[2]);
-        nbLayers1.setText(""+facileSplit[3]);
+        fac = facile.split(":");
+        h1.setText(""+fac[2]);
+        Lr1.setText(""+fac[1]);
+
+        nbLayers1.setText(""+fac[3]);
 
 
-        difficileSplit = difficile.split(":");
-        Lr2.setText(""+difficileSplit[1]);
-        h2.setText(""+difficileSplit[2]);
-        nbLayers2.setText(""+difficileSplit[3]);
+        dif = difficile.split(":");
+        Lr2.setText(""+dif[1]);
+        h2.setText(""+dif[2]);
+        nbLayers2.setText(""+dif[3]);
 
         bis.close();
 

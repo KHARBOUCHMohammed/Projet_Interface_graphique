@@ -7,16 +7,11 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.image.ImageView;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.VBox;
-import javafx.scene.text.Text;
-import javafx.stage.Modality;
+
 import javafx.stage.Stage;
 
 import java.io.*;
-import java.net.MalformedURLException;
-import java.net.URL;
+
 import java.nio.charset.StandardCharsets;
 
 public class PremiereInterface {
@@ -29,21 +24,6 @@ public class PremiereInterface {
 
     @FXML
     private ToggleButton withComputer;
-
-    @FXML
-    private AnchorPane anchorPane;
-
-    @FXML
-    private Menu menu;
-
-    @FXML
-    private Text text;
-
-    @FXML
-    private ImageView imageView;
-
-    @FXML
-    private ImageView imageView1;
 
 
     String[] tabdifficile ;
@@ -118,7 +98,7 @@ public class PremiereInterface {
                 String path="resources/models/"+fileModelEasy;
                 if(new File(path).exists()){
                     m=MultiLayerPerceptron.load(path);
-                    LaunchGame();
+                    startGame();
                 }else{
                     LearningIA();
                 }
@@ -139,7 +119,7 @@ public class PremiereInterface {
                 String path="resources/models/"+fileModelHard;
                 if(new File(path).exists()){
                     m=MultiLayerPerceptron.load(path);
-                    LaunchGame();
+                    startGame();
 
                 }else{
                     LearningIA();
@@ -149,19 +129,7 @@ public class PremiereInterface {
             bis.close();
 
         }
-//        if(withFriend.isSelected() && (hardCheck.isSelected() || easyCheck.isSelected())){
-//            URL url = new File("src/App/vues/NamePlayer.fxml").toURI().toURL();
-//            Parent root = FXMLLoader.load(url);
-//            Stage stage = new Stage();
-//            stage.setTitle("Play time");
-//            Scene scene=new Scene(root);
-//            stage.setScene(scene);
-//            stage.show();
-//            stage.setResizable(false);
-//
-//        }
 
-//    }
     public void LearningIA() throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("learningIA.fxml"));
         Stage stage=new Stage();
@@ -171,14 +139,8 @@ public class PremiereInterface {
         stage.show();
     }
 
-    public void LaunchGame() throws IOException {
-//        Parent root = FXMLLoader.load(getClass().getResource("NamePlayerForAI.fxml"));
-//        Stage stage = new Stage();
-//        stage.setTitle("Model's list");
-//        Scene scene=new Scene(root);
-//        stage.setScene(scene);
-//        stage.show();
-//        stage.setResizable(false);
+    public void startGame() throws IOException {
+
         Parent root= FXMLLoader.load(getClass().getResource("NamePlayerForAI.fxml"));
         Stage window=(Stage) retou.getScene().getWindow();
         window.setTitle("NamePlayerForAI");
