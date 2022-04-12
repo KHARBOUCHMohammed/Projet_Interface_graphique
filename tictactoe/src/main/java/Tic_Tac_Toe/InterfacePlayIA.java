@@ -33,19 +33,17 @@ public class InterfacePlayIA {
     private Button rejoue;
 
 
-    Table Table;
-    Main gameScene ;
+
     Table game;
     int parg;
 
-    private Button play ;
+
 
 
     @FXML
     private Label joueur1;
 
-    @FXML
-    private TextField partieG,time;
+
 
     @FXML
     private Button btn1 ;
@@ -67,10 +65,6 @@ public class InterfacePlayIA {
     private Button btn9 ;
 
 
-    @FXML
-    private ImageView imageview1 ;
-    @FXML
-    private ImageView imageview2 ;
 
 
     ArrayList<Button> liste = new ArrayList<Button>();
@@ -91,8 +85,7 @@ public class InterfacePlayIA {
 
     public void initialize(){
 
-//        imageview1.getStyleClass().add("imageviewiconM");
-//        imageview2.getStyleClass().add("imageviewiconR");
+
         joueur1.setText(NamePlayerForAI.NomJoueur1);
         liste.add(btn1);
         liste.add(btn2);
@@ -383,26 +376,7 @@ public class InterfacePlayIA {
 
 
     public void rejouer(ActionEvent actionEvent) throws IOException {
-//        URL url = new File("InterfacePlayIA.fxml").toURI().toURL();
-//        Parent view2 = FXMLLoader.load(url);
-//
-//        Scene scene2 = new Scene(view2);
-//
-//        Stage window = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
-//        window.setScene(scene2);
-//        window.setTitle("Morpion");
-//
-//        window.show();
-//        ((Node)(actionEvent.getSource())).getScene().getWindow().hide();
 
-
-//        Parent root = FXMLLoader.load(getClass().getResource("InterfacePlayIA.fxml"));
-//        Stage stage = new Stage();
-//        stage.setTitle("playing IA");
-//        Scene scene=new Scene(root);
-//        stage.setScene(scene);
-//        stage.show();
-//        stage.setResizable(false);
 
         Parent root= FXMLLoader.load(getClass().getResource("InterfacePlayIA.fxml"));
         Stage window=(Stage) rejoue.getScene().getWindow();
