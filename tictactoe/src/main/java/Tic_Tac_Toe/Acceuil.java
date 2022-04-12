@@ -18,15 +18,11 @@ public class Acceuil {
     @FXML
     private Button vsamie;
 
+        //pour changer la page si on clique sur la bouton contre Machine
     public void machine(ActionEvent actionEvent) throws IOException
     {
 
-//        Parent root = FXMLLoader.load(getClass().getResource("PremiereInterface.fxml"));
-//        Stage stage=new Stage();
-//        stage.setTitle("Apprentissage");
-//        stage.setScene(new Scene(root));
-//        stage.setResizable(false);
-//        stage.show();
+
 
         Parent root= FXMLLoader.load(getClass().getResource("PremiereInterface.fxml"));
         Stage window=(Stage) vsmachine.getScene().getWindow();
@@ -34,14 +30,8 @@ public class Acceuil {
         window.setScene(new Scene(root));
     }
 
-
+    //pour changer la page si on clique sur la bouton contre amie
     public void friend(ActionEvent actionEvent) throws IOException {
-//        Parent root = FXMLLoader.load(getClass().getResource("NamePlayer.fxml"));
-//        Stage stage=new Stage();
-//        stage.setTitle("Apprentissage");
-//        stage.setScene(new Scene(root));
-//        stage.setResizable(false);
-//        stage.show();
 
 
 
@@ -50,4 +40,6 @@ public class Acceuil {
         window.setTitle("");
         window.setScene(new Scene(root));
     }
+
+
 }

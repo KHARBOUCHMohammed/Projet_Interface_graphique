@@ -84,8 +84,8 @@ public class InterfacePlay {
 
         Joueur humain1= new Joueur();
         Joueur humain2=new Joueur();
-        humain1.setSymbole(1);
-        humain2.setSymbole(0);
+        humain1.setSign(1);
+        humain2.setSign(0);
         humain1.myTour=true;
         ArrayList<Joueur> players = new ArrayList<Joueur>(2);
         players.add(humain1);
@@ -191,11 +191,11 @@ public class InterfacePlay {
             if(b6.equals("X") && b8.equals("X") && b7.equals("X"))
             {
                 btn6.setBackground(new Background(new BackgroundFill(
-                        Color.web("#9036c6"), CornerRadii.EMPTY, Insets.EMPTY)));
+                        Color.web("#36c677"), CornerRadii.EMPTY, Insets.EMPTY)));
                 btn8.setBackground(new Background(new BackgroundFill(
-                        Color.web("#9036c6"), CornerRadii.EMPTY, Insets.EMPTY)));
+                        Color.web("#36c677"), CornerRadii.EMPTY, Insets.EMPTY)));
                 btn7.setBackground(new Background(new BackgroundFill(
-                        Color.web("#9036c6"), CornerRadii.EMPTY, Insets.EMPTY)));
+                        Color.web("#36c677"), CornerRadii.EMPTY, Insets.EMPTY)));
                 Reussite.win=NamePlayer.NomJoueur1;
                 reussite();
 
@@ -204,11 +204,11 @@ public class InterfacePlay {
             if(b9.equals("X") && b1.equals("X") && b4.equals("X"))
             {
                 btn9.setBackground(new Background(new BackgroundFill(
-                        Color.web("#9036c6"), CornerRadii.EMPTY, Insets.EMPTY)));
+                        Color.web("#36c677"), CornerRadii.EMPTY, Insets.EMPTY)));
                 btn4.setBackground(new Background(new BackgroundFill(
-                        Color.web("#9036c6"), CornerRadii.EMPTY, Insets.EMPTY)));
+                        Color.web("#36c677"), CornerRadii.EMPTY, Insets.EMPTY)));
                 btn1.setBackground(new Background(new BackgroundFill(
-                        Color.web("#9036c6"), CornerRadii.EMPTY, Insets.EMPTY)));
+                        Color.web("#36c677"), CornerRadii.EMPTY, Insets.EMPTY)));
                 Reussite.win=NamePlayer.NomJoueur1;
                 reussite();
             }
@@ -216,11 +216,11 @@ public class InterfacePlay {
             if(b5.equals("X") && b2.equals("X") && b3.equals("X"))
             {
                 btn5.setBackground(new Background(new BackgroundFill(
-                        Color.web("#9036c6"), CornerRadii.EMPTY, Insets.EMPTY)));
+                        Color.web("#36c677"), CornerRadii.EMPTY, Insets.EMPTY)));
                 btn2.setBackground(new Background(new BackgroundFill(
-                        Color.web("#9036c6"), CornerRadii.EMPTY, Insets.EMPTY)));
+                        Color.web("#36c677"), CornerRadii.EMPTY, Insets.EMPTY)));
                 btn3.setBackground(new Background(new BackgroundFill(
-                        Color.web("#9036c6"), CornerRadii.EMPTY, Insets.EMPTY)));
+                        Color.web("#36c677"), CornerRadii.EMPTY, Insets.EMPTY)));
                 Reussite.win=NamePlayer.NomJoueur1;
                 reussite();
             }
@@ -240,22 +240,22 @@ public class InterfacePlay {
             if(b5.equals("X") && b1.equals("X") && b7.equals("X"))
             {
                 btn5.setBackground(new Background(new BackgroundFill(
-                        Color.web("#9036c6"), CornerRadii.EMPTY, Insets.EMPTY)));
+                        Color.web("#36c677"), CornerRadii.EMPTY, Insets.EMPTY)));
                 btn1.setBackground(new Background(new BackgroundFill(
-                        Color.web("#9036c6"), CornerRadii.EMPTY, Insets.EMPTY)));
+                        Color.web("#36c677"), CornerRadii.EMPTY, Insets.EMPTY)));
                 btn7.setBackground(new Background(new BackgroundFill(
-                        Color.web("#9036c6"), CornerRadii.EMPTY, Insets.EMPTY)));
+                        Color.web("#36c677"), CornerRadii.EMPTY, Insets.EMPTY)));
                 Reussite.win=NamePlayer.NomJoueur1;
                 reussite();
             }
             if(b6.equals("X") && b9.equals("X") && b5.equals("X"))
             {
                 btn6.setBackground(new Background(new BackgroundFill(
-                        Color.web("#9036c6"), CornerRadii.EMPTY, Insets.EMPTY)));
+                        Color.web("#36c677"), CornerRadii.EMPTY, Insets.EMPTY)));
                 btn9.setBackground(new Background(new BackgroundFill(
-                        Color.web("#9036c6"), CornerRadii.EMPTY, Insets.EMPTY)));
+                        Color.web("#36c677"), CornerRadii.EMPTY, Insets.EMPTY)));
                 btn5.setBackground(new Background(new BackgroundFill(
-                        Color.web("#9036c6"), CornerRadii.EMPTY, Insets.EMPTY)));
+                        Color.web("#36c677"), CornerRadii.EMPTY, Insets.EMPTY)));
                 Reussite.win=NamePlayer.NomJoueur1;
                 reussite();
             }
@@ -264,11 +264,11 @@ public class InterfacePlay {
             if(b8.equals("X") && b1.equals("X") && b2.equals("X"))
             {
                 btn8.setBackground(new Background(new BackgroundFill(
-                        Color.web("#9036c6"), CornerRadii.EMPTY, Insets.EMPTY)));
+                        Color.web("#36c677"), CornerRadii.EMPTY, Insets.EMPTY)));
                 btn1.setBackground(new Background(new BackgroundFill(
-                        Color.web("#9036c6"), CornerRadii.EMPTY, Insets.EMPTY)));
+                        Color.web("#36c677"), CornerRadii.EMPTY, Insets.EMPTY)));
                 btn2.setBackground(new Background(new BackgroundFill(
-                        Color.web("#9036c6"), CornerRadii.EMPTY, Insets.EMPTY)));
+                        Color.web("#36c677"), CornerRadii.EMPTY, Insets.EMPTY)));
                 Reussite.win=NamePlayer.NomJoueur1;
                 reussite();
             }
@@ -276,11 +276,11 @@ public class InterfacePlay {
             if(b7.equals("X") && b4.equals("X") && b3.equals("X"))
             {
                 btn4.setBackground(new Background(new BackgroundFill(
-                        Color.web("#9036c6"), CornerRadii.EMPTY, Insets.EMPTY)));
+                        Color.web("#36c677"), CornerRadii.EMPTY, Insets.EMPTY)));
                 btn3.setBackground(new Background(new BackgroundFill(
-                        Color.web("#9036c6"), CornerRadii.EMPTY, Insets.EMPTY)));
+                        Color.web("#36c677"), CornerRadii.EMPTY, Insets.EMPTY)));
                 btn7.setBackground(new Background(new BackgroundFill(
-                        Color.web("#9036c6"), CornerRadii.EMPTY, Insets.EMPTY)));
+                        Color.web("#36c677"), CornerRadii.EMPTY, Insets.EMPTY)));
                 Reussite.win=NamePlayer.NomJoueur1;
                 reussite();
             }
@@ -290,11 +290,11 @@ public class InterfacePlay {
             if(b6.equals("O") && b8.equals("O") && b7.equals("O"))
             {
                 btn6.setBackground(new Background(new BackgroundFill(
-                        Color.web("#9036c6"), CornerRadii.EMPTY, Insets.EMPTY)));
+                        Color.web("#36c677"), CornerRadii.EMPTY, Insets.EMPTY)));
                 btn8.setBackground(new Background(new BackgroundFill(
-                        Color.web("#9036c6"), CornerRadii.EMPTY, Insets.EMPTY)));
+                        Color.web("#36c677"), CornerRadii.EMPTY, Insets.EMPTY)));
                 btn7.setBackground(new Background(new BackgroundFill(
-                        Color.web("#9036c6"), CornerRadii.EMPTY, Insets.EMPTY)));
+                        Color.web("#36c677"), CornerRadii.EMPTY, Insets.EMPTY)));
                 Reussite.win=NamePlayer.NomJoueur2;
                 reussite();
 
@@ -303,11 +303,11 @@ public class InterfacePlay {
             if(b9.equals("O") && b1.equals("O") && b4.equals("O"))
             {
                 btn9.setBackground(new Background(new BackgroundFill(
-                        Color.web("#9036c6"), CornerRadii.EMPTY, Insets.EMPTY)));
+                        Color.web("#36c677"), CornerRadii.EMPTY, Insets.EMPTY)));
                 btn1.setBackground(new Background(new BackgroundFill(
-                        Color.web("#9036c6"), CornerRadii.EMPTY, Insets.EMPTY)));
+                        Color.web("#36c677"), CornerRadii.EMPTY, Insets.EMPTY)));
                 btn4.setBackground(new Background(new BackgroundFill(
-                        Color.web("#9036c6"), CornerRadii.EMPTY, Insets.EMPTY)));
+                        Color.web("#36c677"), CornerRadii.EMPTY, Insets.EMPTY)));
                 Reussite.win=NamePlayer.NomJoueur2;
                 reussite();
             }
@@ -315,43 +315,43 @@ public class InterfacePlay {
             if(b5.equals("O") && b2.equals("O") && b3.equals("O"))
             {
                 btn5.setBackground(new Background(new BackgroundFill(
-                        Color.web("#9036c6"), CornerRadii.EMPTY, Insets.EMPTY)));
+                        Color.web("#36c677"), CornerRadii.EMPTY, Insets.EMPTY)));
                 btn2.setBackground(new Background(new BackgroundFill(
-                        Color.web("#9036c6"), CornerRadii.EMPTY, Insets.EMPTY)));
+                        Color.web("#36c677"), CornerRadii.EMPTY, Insets.EMPTY)));
                 btn3.setBackground(new Background(new BackgroundFill(
-                        Color.web("#9036c6"), CornerRadii.EMPTY, Insets.EMPTY)));
+                        Color.web("#36c677"), CornerRadii.EMPTY, Insets.EMPTY)));
                 Reussite.win=NamePlayer.NomJoueur2;
                 reussite();
             }
 
             if(b6.equals("O") && b9.equals("O") && b5.equals("O")) {
                 btn6.setBackground(new Background(new BackgroundFill(
-                        Color.web("#9036c6"), CornerRadii.EMPTY, Insets.EMPTY)));
+                        Color.web("#36c677"), CornerRadii.EMPTY, Insets.EMPTY)));
                 btn9.setBackground(new Background(new BackgroundFill(
-                        Color.web("#9036c6"), CornerRadii.EMPTY, Insets.EMPTY)));
+                        Color.web("#36c677"), CornerRadii.EMPTY, Insets.EMPTY)));
                 btn5.setBackground(new Background(new BackgroundFill(
-                        Color.web("#9036c6"), CornerRadii.EMPTY, Insets.EMPTY)));
+                        Color.web("#36c677"), CornerRadii.EMPTY, Insets.EMPTY)));
                 Reussite.win=NamePlayer.NomJoueur2;
                 reussite();
             }
 
             if(b8.equals("O") && b1.equals("O") && b2.equals("O")) {
                 btn8.setBackground(new Background(new BackgroundFill(
-                        Color.web("#9036c6"), CornerRadii.EMPTY, Insets.EMPTY)));
+                        Color.web("#36c677"), CornerRadii.EMPTY, Insets.EMPTY)));
                 btn1.setBackground(new Background(new BackgroundFill(
-                        Color.web("#9036c6"), CornerRadii.EMPTY, Insets.EMPTY)));
+                        Color.web("#36c677"), CornerRadii.EMPTY, Insets.EMPTY)));
                 btn2.setBackground(new Background(new BackgroundFill(
-                        Color.web("#9036c6"), CornerRadii.EMPTY, Insets.EMPTY)));
+                        Color.web("#36c677"), CornerRadii.EMPTY, Insets.EMPTY)));
                 Reussite.win=NamePlayer.NomJoueur2;
                 reussite();
             }
             if(b7.equals("O") && b4.equals("O") && b3.equals("O")) {
                 btn7.setBackground(new Background(new BackgroundFill(
-                        Color.web("#9036c6"), CornerRadii.EMPTY, Insets.EMPTY)));
+                        Color.web("#36c677"), CornerRadii.EMPTY, Insets.EMPTY)));
                 btn4.setBackground(new Background(new BackgroundFill(
-                        Color.web("#9036c6"), CornerRadii.EMPTY, Insets.EMPTY)));
+                        Color.web("#36c677"), CornerRadii.EMPTY, Insets.EMPTY)));
                 btn3.setBackground(new Background(new BackgroundFill(
-                        Color.web("#9036c6"), CornerRadii.EMPTY, Insets.EMPTY)));
+                        Color.web("#36c677"), CornerRadii.EMPTY, Insets.EMPTY)));
                 Reussite.win=NamePlayer.NomJoueur2;
                 reussite();
             }
@@ -359,22 +359,22 @@ public class InterfacePlay {
 
             if(b6.equals("O") && b1.equals("O") && b3.equals("O")) {
                 btn6.setBackground(new Background(new BackgroundFill(
-                        Color.web("#9036c6"), CornerRadii.EMPTY, Insets.EMPTY)));
+                        Color.web("#36c677"), CornerRadii.EMPTY, Insets.EMPTY)));
                 btn1.setBackground(new Background(new BackgroundFill(
-                        Color.web("#9036c6"), CornerRadii.EMPTY, Insets.EMPTY)));
+                        Color.web("#36c677"), CornerRadii.EMPTY, Insets.EMPTY)));
                 btn3.setBackground(new Background(new BackgroundFill(
-                        Color.web("#9036c6"), CornerRadii.EMPTY, Insets.EMPTY)));
+                        Color.web("#36c677"), CornerRadii.EMPTY, Insets.EMPTY)));
                 Reussite.win=NamePlayer.NomJoueur2;
                 reussite();
             }
 
             if(b5.equals("O") && b1.equals("O") && b7.equals("O")) {
                 btn5.setBackground(new Background(new BackgroundFill(
-                        Color.web("#9036c6"), CornerRadii.EMPTY, Insets.EMPTY)));
+                        Color.web("#36c677"), CornerRadii.EMPTY, Insets.EMPTY)));
                 btn1.setBackground(new Background(new BackgroundFill(
-                        Color.web("#9036c6"), CornerRadii.EMPTY, Insets.EMPTY)));
+                        Color.web("#36c677"), CornerRadii.EMPTY, Insets.EMPTY)));
                 btn7.setBackground(new Background(new BackgroundFill(
-                        Color.web("#9036c6"), CornerRadii.EMPTY, Insets.EMPTY)));
+                        Color.web("#36c677"), CornerRadii.EMPTY, Insets.EMPTY)));
                 Reussite.win=NamePlayer.NomJoueur2;
                 reussite();
             }

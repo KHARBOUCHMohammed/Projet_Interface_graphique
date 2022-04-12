@@ -227,9 +227,13 @@ public class LearningIA {
             System.out.println("--- ");
             System.out.println("Load data ...");
             HashMap<Integer, Coup> mapTrain = Test.loadCoupsFromFile("./resources/train_dev_test/train.txt");
+
+
             HashMap<Integer, Coup> mapDev = Test.loadCoupsFromFile("./resources/train_dev_test/dev.txt");
+
+
             HashMap<Integer, Coup> mapTest = Test.loadCoupsFromFile("./resources/train_dev_test/test.txt");
-            System.out.println("---");
+
 
             progressBar.progressProperty().unbind();
             progressBar.setProgress(0);

@@ -1,27 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.String?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Tic_Tac_Toe.NamePlayerForAI">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" styleClass="bg-main" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Tic_Tac_Toe.NamePlayerForAI">
     <children>
-        <Text fill="Black" layoutX="87.0" layoutY="190.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Player  :">
+        <Text fill="Black" layoutX="93.0" layoutY="215.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Player  :">
             <font>
                 <Font name="System Bold" size="14.0" />
             </font></Text>
-        <TextField fx:id="player1" layoutX="171.0" layoutY="172.0" prefHeight="25.0" prefWidth="330.0" />
+        <TextField fx:id="player1" layoutX="177.0" layoutY="197.0" prefHeight="25.0" prefWidth="330.0" styleClass="border-radius" />
         <Text fill="Black" layoutX="113.0" layoutY="224.0" strokeType="OUTSIDE" strokeWidth="0.0">
             <font>
                 <Font name="System Bold" size="14.0" />
             </font></Text>
-        <Button fx:id="play" layoutX="374.0" layoutY="315.0" mnemonicParsing="false" onAction="#StartPlay" prefHeight="19.0" prefWidth="149.0" text="Start Playing" />
-        <Text id="text" layoutX="195.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Please enter your name !" wrappingWidth="211.0">
+        <Button fx:id="play" layoutX="300.0" layoutY="329.0" mnemonicParsing="false" onAction="#StartPlay" prefHeight="19.0" prefWidth="149.0" text="Start">
+         <styleClass>
+            <String fx:value="btn-secondry" />
+            <String fx:value="right" />
+         </styleClass></Button>
+        <Text id="text" layoutX="147.0" layoutY="85.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-text-alignment: center;" styleClass="title" text="Please enter your name!" textAlignment="CENTER">
             <font>
                 <Font name="System Bold" size="16.0" />
             </font></Text>
-      <Button fx:id="retou" layoutX="68.0" layoutY="315.0" mnemonicParsing="false" onAction="#retour" prefHeight="25.0" prefWidth="149.0" text="Retour" />
+        <Button fx:id="retou" layoutX="200.0" layoutY="329.0" mnemonicParsing="false" onAction="#retour" prefHeight="25.0" prefWidth="149.0" text="Return">
+         <styleClass>
+            <String fx:value="btn-secondry" />
+            <String fx:value="left" />
+         </styleClass></Button>
     </children>
 </AnchorPane>

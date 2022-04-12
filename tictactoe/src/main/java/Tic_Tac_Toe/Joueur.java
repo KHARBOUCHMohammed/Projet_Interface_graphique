@@ -8,7 +8,7 @@ public class Joueur
     private Boolean ai=false;
     private Boolean winner=false;
     public Boolean myTour=false;
-    private int symbole;
+    private int sign;
 
     public int getId() {
         return id;
@@ -34,11 +34,11 @@ public class Joueur
     public void setWinner(Boolean winner) {
         this.winner = winner;
     }
-    public int getSymbole() {
-        return symbole;
+    public int getSign() {
+        return sign;
     }
-    public void setSymbole(int symbole) {
-        this.symbole = symbole;
+    public void setSign(int symbole) {
+        this.sign = symbole;
     }
 
 }

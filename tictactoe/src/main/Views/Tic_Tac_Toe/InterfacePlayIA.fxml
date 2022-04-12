@@ -1,51 +1,119 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Tic_Tac_Toe.InterfacePlayIA">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" styleClass="bg-main" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Tic_Tac_Toe.InterfacePlayIA">
 
     <children>
-        <Pane id="paneBtns" layoutX="228.0" layoutY="34.0" prefHeight="336.0" prefWidth="342.0">
+        <Pane id="paneBtns" layoutX="228.0" layoutY="34.0" prefHeight="336.0" prefWidth="342.0" styleClass="game-board">
             <children>
-                <Button id="3" fx:id="btn3" layoutX="229.0" layoutY="228.0" mnemonicParsing="false" onAction="#jouer" prefHeight="99.0" prefWidth="100.0" styleClass="Btns" />
-                <Button id="2" fx:id="btn2" layoutX="122.0" layoutY="228.0" mnemonicParsing="false" onAction="#jouer" prefHeight="99.0" prefWidth="100.0" styleClass="Btns" />
-                <Button id="5" fx:id="btn5" layoutX="15.0" layoutY="228.0" mnemonicParsing="false" onAction="#jouer" prefHeight="99.0" prefWidth="100.0" styleClass="Btns" />
-                <Button id="4" fx:id="btn4" layoutX="229.0" layoutY="118.0" mnemonicParsing="false" onAction="#jouer" prefHeight="99.0" prefWidth="100.0" styleClass="Btns" />
-                <Button id="1" fx:id="btn1" layoutX="122.0" layoutY="118.0" mnemonicParsing="false" onAction="#jouer" prefHeight="99.0" prefWidth="100.0" styleClass="Btns" />
-                <Button id="9" fx:id="btn9" layoutX="15.0" layoutY="118.0" mnemonicParsing="false" onAction="#jouer" prefHeight="99.0" prefWidth="100.0" styleClass="Btns" />
-                <Button id="7" fx:id="btn7" layoutX="229.0" layoutY="8.0" mnemonicParsing="false" onAction="#jouer" prefHeight="99.0" prefWidth="100.0" styleClass="Btns" />
-                <Button id="8" fx:id="btn8" layoutX="122.0" layoutY="8.0" mnemonicParsing="false" onAction="#jouer" prefHeight="99.0" prefWidth="100.0" styleClass="Btns" />
-                <Button id="6" fx:id="btn6" layoutX="15.0" layoutY="8.0" mnemonicParsing="false" onAction="#jouer" prefHeight="99.0" prefWidth="100.0" styleClass="Btns" /></children>
+                <Button id="3" fx:id="btn3" layoutX="223.0" layoutY="218.0" mnemonicParsing="false" onAction="#jouer" prefHeight="99.0" prefWidth="100.0">
+               <styleClass>
+                  <String fx:value="Btns" />
+                  <String fx:value="game-board" />
+                  <String fx:value="bottom-right" />
+               </styleClass></Button>
+                <Button id="2" fx:id="btn2" layoutX="122.0" layoutY="219.0" mnemonicParsing="false" onAction="#jouer" prefHeight="99.0" prefWidth="100.0">
+               <styleClass>
+                  <String fx:value="Btns" />
+                  <String fx:value="game-board" />
+                  <String fx:value="bottom-center" />
+               </styleClass></Button>
+                <Button id="5" fx:id="btn5" layoutX="22.0" layoutY="218.0" mnemonicParsing="false" onAction="#jouer" prefHeight="99.0" prefWidth="100.0">
+               <styleClass>
+                  <String fx:value="Btns" />
+                  <String fx:value="game-board" />
+                  <String fx:value="bottom-left" />
+               </styleClass></Button>
+                <Button id="4" fx:id="btn4" layoutX="222.0" layoutY="118.0" mnemonicParsing="false" onAction="#jouer" prefHeight="99.0" prefWidth="100.0">
+               <styleClass>
+                  <String fx:value="Btns" />
+                  <String fx:value="game-board" />
+                  <String fx:value="middle-right" />
+               </styleClass></Button>
+                <Button id="1" fx:id="btn1" layoutX="122.0" layoutY="118.0" mnemonicParsing="false" onAction="#jouer" prefHeight="99.0" prefWidth="100.0">
+               <styleClass>
+                  <String fx:value="Btns" />
+                  <String fx:value="game-board" />
+               </styleClass></Button>
+                <Button id="9" fx:id="btn9" layoutX="22.0" layoutY="118.0" mnemonicParsing="false" onAction="#jouer" prefHeight="99.0" prefWidth="100.0">
+               <styleClass>
+                  <String fx:value="Btns" />
+                  <String fx:value="game-board" />
+                  <String fx:value="middle-left" />
+               </styleClass></Button>
+                <Button id="7" fx:id="btn7" layoutX="222.0" layoutY="19.0" mnemonicParsing="false" onAction="#jouer" prefHeight="99.0" prefWidth="100.0">
+               <styleClass>
+                  <String fx:value="Btns" />
+                  <String fx:value="game-board" />
+                  <String fx:value="top-right" />
+               </styleClass></Button>
+                <Button id="8" fx:id="btn8" layoutX="122.0" layoutY="18.0" mnemonicParsing="false" onAction="#jouer" prefHeight="99.0" prefWidth="100.0">
+               <styleClass>
+                  <String fx:value="Btns" />
+                  <String fx:value="game-board" />
+                  <String fx:value="top-center" />
+               </styleClass></Button>
+                <Button id="6" fx:id="btn6" layoutX="22.0" layoutY="18.0" mnemonicParsing="false" onAction="#jouer" prefHeight="99.0" prefWidth="100.0">
+               <styleClass>
+                  <String fx:value="Btns" />
+                  <String fx:value="game-board" />
+                  <String fx:value="top-left" />
+               </styleClass></Button></children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
         </Pane>
-        <Button fx:id="rejoue" layoutX="129.0" layoutY="336.0" mnemonicParsing="false" onAction="#rejouer" prefHeight="25.0" prefWidth="100.0" text="Replay" />
+        <Button fx:id="rejoue" alignment="CENTER" layoutX="116.0" layoutY="340.0" mnemonicParsing="false" onAction="#rejouer" prefHeight="25.0" prefWidth="100.0" text="Replay" textAlignment="CENTER">
+         <styleClass>
+            <String fx:value="btn-secondry" />
+            <String fx:value="right" />
+         </styleClass></Button>
 
-        <Button fx:id="retou" layoutX="13.0" layoutY="336.0" mnemonicParsing="false" onAction="#retour" prefHeight="25.0" prefWidth="100.0" text="Back to menu" />
+        <Button fx:id="retou" alignment="CENTER" layoutX="16.0" layoutY="340.0" mnemonicParsing="false" onAction="#retour" prefHeight="25.0" prefWidth="100.0" text="Return" textAlignment="CENTER">
+         <styleClass>
+            <String fx:value="btn-secondry" />
+            <String fx:value="left" />
+         </styleClass></Button>
 
 
 
 
-        <Label fx:id="joueur1" layoutX="24.0" layoutY="217.0" prefHeight="17.0" prefWidth="77.0" textAlignment="CENTER" textFill="BLACK">
+        <Label fx:id="joueur1" layoutX="27.0" layoutY="207.0" prefHeight="17.0" prefWidth="77.0" styleClass="text-color-primary" textAlignment="CENTER" textFill="BLACK">
             <font>
                 <Font name="System Bold" size="14.0" />
             </font>
         </Label>
-        <Label layoutX="140.0" layoutY="217.0" prefHeight="17.0" prefWidth="77.0" text="Computer" textAlignment="CENTER" textFill="BLACK">
+        <Label layoutX="142.0" layoutY="205.0" prefHeight="17.0" prefWidth="77.0" styleClass="text-color-primary" text="Computer" textAlignment="CENTER" textFill="WHITE">
             <font>
                 <Font name="System Bold" size="14.0" />
             </font>
         </Label>
-        <Label layoutX="103.0" layoutY="214.0" text="VS" textFill="#481b63">
+        <Label layoutX="107.0" layoutY="205.0" styleClass="text-color-primary" text="VS">
             <font>
-                <Font name="System Bold" size="16.0" />
+                <Font name="System Bold" size="14.0" />
             </font>
         </Label>
-      <ImageView fitHeight="75.0" fitWidth="77.0" layoutX="24.0" layoutY="139.0" pickOnBounds="true" preserveRatio="true" />
-      <ImageView fitHeight="75.0" fitWidth="89.0" layoutX="133.0" layoutY="139.0" pickOnBounds="true" preserveRatio="true" />
+        <ImageView fitHeight="75.0" fitWidth="77.0" layoutX="24.0" layoutY="139.0" pickOnBounds="true" preserveRatio="true" />
+        <ImageView fitHeight="75.0" fitWidth="89.0" layoutX="133.0" layoutY="139.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fitHeight="114.0" fitWidth="89.0" layoutX="127.0" layoutY="92.0">
+         <image>
+            <Image url="@../img/o%20(2).png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="101.0" fitWidth="77.0" layoutX="16.0" layoutY="99.0">
+         <image>
+            <Image url="@../img/clair.png" />
+         </image>
+      </ImageView>
     </children>
 
 </AnchorPane>

@@ -14,8 +14,8 @@ import java.io.File;
 public class ListeModele {
 
     private SimpleStringProperty liste;
-    public int filecount = 0;
-    public int dircount = 0;
+    public int fc = 0; //filecount
+    public int dc = 0; //directoryCount
     private Boolean recursivePath = false;
 
     @FXML
@@ -36,19 +36,29 @@ public class ListeModele {
             }
 
         });
-        String directory= "resources/models";
-        File file = new File(directory);
+        String dir= "resources/models";
+
+        File file = new File(dir);
+
         File[] files = file.listFiles();
+
         if (files != null) {
+
             for (int i = 0; i < files.length; i++) {
+
                 if (files[i].isDirectory() == true) {
-                    this.dircount++;
+
+                    this.dc++;
+
                 } else {
 
                     ObservableList<String> items = tabl.getItems();
+
                     String a=files[i].getName();
+
                     items.add(a);
-                    this.filecount++;
+
+                    this.fc++;
 
                 }
 
@@ -62,15 +72,22 @@ public class ListeModele {
 
 
     public void SupprimerModels(ActionEvent event) {
+
         int index = tabl.getSelectionModel().getSelectedIndex();
+
         String a=tabl.getItems().get(index);
 
         File file2 = new File("resources/models/"+a);
+
         tabl.getItems().removeAll(tabl.getSelectionModel().getSelectedItems());
+
+
         if(file2.delete()){
+
             System.out.println(file2.getName() + " est supprimé.");
         }else{
-            System.out.println("Opération de suppression echouée");
+
+            System.out.println("La suppression est echouée");
         }
 
     }
