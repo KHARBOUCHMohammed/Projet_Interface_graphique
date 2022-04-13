@@ -60,8 +60,11 @@ public class ConfigAI {
         String difficile = r.readLine();
 
         fac = facile.split(":");
-        h1.setText(""+fac[2]);
+
+
         Lr1.setText(""+fac[1]);
+        h1.setText(""+fac[2]);
+
 
         nbLayers1.setText(""+fac[3]);
 

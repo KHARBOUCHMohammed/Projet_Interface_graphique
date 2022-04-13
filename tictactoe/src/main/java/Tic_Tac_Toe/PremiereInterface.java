@@ -133,7 +133,7 @@ public class PremiereInterface {
     public void LearningIA() throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("learningIA.fxml"));
         Stage stage=new Stage();
-        stage.setTitle("Apprentissage");
+        stage.setTitle("Learning");
         stage.setScene(new Scene(root));
         stage.setResizable(false);
         stage.show();
@@ -143,14 +143,14 @@ public class PremiereInterface {
 
         Parent root= FXMLLoader.load(getClass().getResource("NamePlayerForAI.fxml"));
         Stage window=(Stage) retou.getScene().getWindow();
-        window.setTitle("NamePlayerForAI");
+        window.setTitle("Name Player");
         window.setScene(new Scene(root));
     }
 
     public void retour() throws IOException {
         Parent root= FXMLLoader.load(getClass().getResource("Acceuil.fxml"));
         Stage window=(Stage) retou.getScene().getWindow();
-        window.setTitle("");
+        window.setTitle("Tic_Tac_Toe");
         window.setScene(new Scene(root));
     }
 
@@ -179,7 +179,7 @@ public class PremiereInterface {
 
         Parent root = FXMLLoader.load(getClass().getResource("ConfigAI.fxml"));
         Stage stage = new Stage();
-        stage.setTitle("Model's list");
+        stage.setTitle("AI Configuration");
         Scene scene=new Scene(root);
         stage.setScene(scene);
         stage.show();

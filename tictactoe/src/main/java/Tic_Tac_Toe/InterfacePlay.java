@@ -71,13 +71,12 @@ public class InterfacePlay {
         Joueur humain1= new Joueur();
         Joueur humain2=new Joueur();
         humain1.setSign(1);
-        humain2.setSign(0);
+        humain2.setSign(-1);
         humain1.myTour=true;
         ArrayList<Joueur> players = new ArrayList<Joueur>(2);
         players.add(humain1);
         players.add(humain2);
         game = new Table(players);
-        System.out.println(NamePlayer.NomJoueur1);
         joueur1.setText(NamePlayer.NomJoueur1);
         joueur2.setText(NamePlayer.NomJoueur2);
 
@@ -94,7 +93,7 @@ public class InterfacePlay {
     void retour(ActionEvent event) throws IOException {
         Parent root= FXMLLoader.load(getClass().getResource("Acceuil.fxml"));
         Stage window=(Stage) retou.getScene().getWindow();
-        window.setTitle("");
+        window.setTitle("Tic_Tac_Toe");
         window.setScene(new Scene(root));
 
     }
@@ -105,7 +104,7 @@ public class InterfacePlay {
 
         Parent root= FXMLLoader.load(getClass().getResource("InterfacePlay.fxml"));
         Stage window=(Stage) rejoue.getScene().getWindow();
-        window.setTitle("");
+        window.setTitle(" Play Game");
         window.setScene(new Scene(root));
 
     }
@@ -122,7 +121,7 @@ public class InterfacePlay {
         //Gets the button clicked
         if(game.finish!=true) {
             if(game.getPlayers().get(0).myTour==true) {
-                btn1.setDisable(true);
+                //btn1.setDisable(true);
                 btn.setText("X");
                 btn.setStyle("-fx-font: 50 arial;-fx-text-fill: red;");
                 game.getPlayers().get(0).myTour=false;
@@ -202,11 +201,11 @@ public class InterfacePlay {
             if(b6.equals("X") && b1.equals("X") && b3.equals("X"))
             {
                 btn6.setBackground(new Background(new BackgroundFill(
-                        Color.web("#9036c6"), CornerRadii.EMPTY, Insets.EMPTY)));
+                        Color.web("#36c677"), CornerRadii.EMPTY, Insets.EMPTY)));
                 btn1.setBackground(new Background(new BackgroundFill(
-                        Color.web("#9036c6"), CornerRadii.EMPTY, Insets.EMPTY)));
+                        Color.web("#36c677"), CornerRadii.EMPTY, Insets.EMPTY)));
                 btn3.setBackground(new Background(new BackgroundFill(
-                        Color.web("#9036c6"), CornerRadii.EMPTY, Insets.EMPTY)));
+                        Color.web("#36c677"), CornerRadii.EMPTY, Insets.EMPTY)));
                 Reussite.win=NamePlayer.NomJoueur1;
                 reussite();
             }
@@ -360,7 +359,7 @@ public class InterfacePlay {
     public void reussite() throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("reussite.fxml"));
         Stage stage=new Stage();
-        stage.setTitle("");
+        stage.setTitle("success");
         stage.setScene(new Scene(root));
         stage.setResizable(false);
         stage.show();

@@ -209,9 +209,7 @@ public class LearningIA {
         try {
 
             int size = 9;
-            System.out.println();
-            System.out.println("START TRAINING ...");
-            System.out.println();
+
 
             int[] layers = new int[getL()+2];
             layers[0]=size;
@@ -224,8 +222,7 @@ public class LearningIA {
             this.net = new MultiLayerPerceptron(layers, getLr(), new SigmoidalTransferFunction());
             this.epochs = 10000;
 
-            System.out.println("--- ");
-            System.out.println("Load data ...");
+
             HashMap<Integer, Coup> mapTrain = Test.loadCoupsFromFile("./resources/train_dev_test/train.txt");
 
 
@@ -256,16 +253,6 @@ public class LearningIA {
 
                     textField.getScene().getWindow().hide();
 
-                    Parent root =null;
-                  try {
-            root = FXMLLoader.load(getClass().getResource("NamePlayerForIA.fxml"));
-           }catch (IOException e){
-            Stage stage=new Stage();
-            stage.setTitle("playing game");
-            stage.setScene(new Scene(root));
-            stage.setResizable(false);
-            stage.show();
-        }
 
                 }
             });
@@ -277,7 +264,7 @@ public class LearningIA {
 
 
         } catch (Exception e) {
-            System.out.println("Test.test()");
+            System.out.println("error");
             e.printStackTrace();
             System.exit(-1);
         }

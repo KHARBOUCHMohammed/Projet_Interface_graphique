@@ -34,14 +34,14 @@ public class NamePlayerForAI {
 
         Parent root= FXMLLoader.load(getClass().getResource("InterfacePlayIA.fxml"));
         Stage window=(Stage) play.getScene().getWindow();
-        window.setTitle("");
+        window.setTitle("Game with IA");
         window.setScene(new Scene(root));
     }
     public void retour(ActionEvent actionEvent) throws IOException {
 
         Parent root= FXMLLoader.load(getClass().getResource("PremiereInterface.fxml"));
         Stage window=(Stage) retou.getScene().getWindow();
-        window.setTitle("");
+        window.setTitle("Tic_Tac_Toe");
         window.setScene(new Scene(root));
     }
 

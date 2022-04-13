@@ -101,7 +101,7 @@ public class InterfacePlayIA {
         Joueur humain1= new Joueur();
         Joueur computer=new Joueur();
         humain1.setSign(1);
-        computer.setSign(0);
+        computer.setSign(-1);
         humain1.myTour=true;
         ArrayList<Joueur> players = new ArrayList<Joueur>(2);
         players.add(humain1);
@@ -118,7 +118,7 @@ public class InterfacePlayIA {
         }
         Arrays.sort(outputTrie, Collections.reverseOrder());
 
-        System.out.println("Tableau trié\n");
+        //System.out.println("Tableau trié\n");
         for (double entier : outputTrie) {
             System.out.println("nombre: " + entier);
         }
@@ -178,7 +178,7 @@ public class InterfacePlayIA {
                 btn8.setBackground(new Background(new BackgroundFill(
                         Color.web("#36c677"), CornerRadii.EMPTY, Insets.EMPTY)));
                 btn7.setBackground(new Background(new BackgroundFill(
-                        Color.web("##36c677"), CornerRadii.EMPTY, Insets.EMPTY)));
+                        Color.web("#36c677"), CornerRadii.EMPTY, Insets.EMPTY)));
                 Reussite.win=NamePlayerForAI.NomJoueur1;
                 reussite();
 
@@ -377,7 +377,7 @@ public class InterfacePlayIA {
 
         Parent root= FXMLLoader.load(getClass().getResource("InterfacePlayIA.fxml"));
         Stage window=(Stage) rejoue.getScene().getWindow();
-        window.setTitle("");
+        window.setTitle("Game");
         window.setScene(new Scene(root));
     }
 
@@ -388,7 +388,7 @@ public class InterfacePlayIA {
     public void retour(ActionEvent actionEvent) throws IOException {
         Parent root= FXMLLoader.load(getClass().getResource("Acceuil.fxml"));
         Stage window=(Stage) retou.getScene().getWindow();
-        window.setTitle("");
+        window.setTitle("Tic_Tac_Toe");
         window.setScene(new Scene(root));
 
     }

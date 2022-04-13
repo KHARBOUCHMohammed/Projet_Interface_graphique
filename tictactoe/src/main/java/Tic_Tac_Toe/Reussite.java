@@ -36,9 +36,9 @@ public class Reussite {
     public void replay(ActionEvent actionEvent) throws IOException {
 
 
-        Parent root= FXMLLoader.load(getClass().getResource("PremiereInterface.fxml"));
+        Parent root= FXMLLoader.load(getClass().getResource("Acceuil.fxml"));
         Stage window=(Stage) rejoue.getScene().getWindow();
-        window.setTitle("");
+        window.setTitle("Tic_Tac_Toe");
         window.setScene(new Scene(root));
     }
 

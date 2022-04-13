@@ -26,7 +26,7 @@ public class Acceuil {
 
         Parent root= FXMLLoader.load(getClass().getResource("PremiereInterface.fxml"));
         Stage window=(Stage) vsmachine.getScene().getWindow();
-        window.setTitle("");
+        window.setTitle("Players Name");
         window.setScene(new Scene(root));
     }
 
@@ -37,7 +37,7 @@ public class Acceuil {
 
         Parent root= FXMLLoader.load(getClass().getResource("NamePlayer.fxml"));
         Stage window=(Stage) vsamie.getScene().getWindow();
-        window.setTitle("");
+        window.setTitle("Name Player");
         window.setScene(new Scene(root));
     }
 

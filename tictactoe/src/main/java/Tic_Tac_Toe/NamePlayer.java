@@ -52,7 +52,7 @@ public class NamePlayer{
 
         Parent root= FXMLLoader.load(getClass().getResource("Acceuil.fxml"));
         Stage window=(Stage) retou.getScene().getWindow();
-        window.setTitle("");
+        window.setTitle("Tic_Tac_Toe");
         window.setScene(new Scene(root));
 
 
